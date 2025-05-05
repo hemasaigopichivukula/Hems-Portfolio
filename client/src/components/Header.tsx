@@ -20,23 +20,6 @@ export default function Header() {
         <p className="text-lg md:text-xl text-blue-100 mt-2 max-w-2xl mx-auto">
           MBA mind behind streamlined solutions — where strategy meets simplicity
         </p>
-        <div className="mt-8 flex justify-center gap-4">
-          <Button 
-            asChild
-            size="lg"
-            className="bg-white text-blue-900 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition shadow-md hover:shadow-lg transform hover:-translate-y-1"
-          >
-            <a href="#contact">Contact Me</a>
-          </Button>
-          <Button 
-            asChild
-            variant="outline" 
-            size="lg"
-            className="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition"
-          >
-            <a href="#projects">View Projects</a>
-          </Button>
-        </div>
       </div>
 
       
