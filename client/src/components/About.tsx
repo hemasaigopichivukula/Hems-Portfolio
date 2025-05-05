@@ -13,10 +13,16 @@ export default function About() {
         <div className="flex flex-col md:flex-row gap-8 items-center">
           <div className="md:w-2/3">
             <p className="text-lg leading-relaxed mb-4">
-              I help organizations improve efficiency while fostering leadership and personal growth. With an MBA background and experience at major companies like Amazon, I specialize in simplifying complex systems and building people-centered strategies for lasting impact.
+              I'm a strategic problem-solver who doesn't just build tools — I engineer clarity.
             </p>
             <p className="text-lg leading-relaxed mb-4">
-              My approach combines strategic thinking with practical implementation - turning ideas into actionable solutions that drive measurable results.
+              With an MBA and experience at Amazon and mission-driven organizations, I specialize in identifying operational blind spots, uncovering hidden inefficiencies, and transforming chaos into structured, actionable systems.
+            </p>
+            <p className="text-lg leading-relaxed mb-4">
+              My process starts with asking the right questions. I dive deep to understand what's broken, why it matters, and how it can be fixed — then I build tailored solutions that drive visibility, streamline processes, and empower leaders to make data-backed decisions.
+            </p>
+            <p className="text-lg leading-relaxed mb-4">
+              Whether it's a workflow bottleneck, a misaligned strategy, or a buried opportunity, I turn complexity into clarity and ideas into results.
             </p>
             <div className="flex gap-4 mt-6">
               <a href="https://www.linkedin.com/in/hemasaigopichivukula/" target="_blank" className="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg flex items-center hover:bg-blue-200 transition">
