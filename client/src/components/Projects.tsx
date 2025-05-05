@@ -1,8 +1,10 @@
 import { projectsData } from "@/lib/data";
 
+import { motion } from "framer-motion";
+
 export default function Projects() {
   return (
-    <section id="projects" className="py-16 px-6" data-aos="fade-up">
+    <section id="projects" className="py-16 px-6">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl font-bold text-primary mb-2 flex items-center">
           <span className="bg-primary text-white w-10 h-10 rounded-full inline-flex items-center justify-center mr-3">
@@ -14,7 +16,14 @@ export default function Projects() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projectsData.map((project, index) => (
-            <div className="group" key={index} data-aos="zoom-in">
+            <motion.div
+  className="group card-hover"
+  key={index}
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5, delay: index * 0.1 }}
+  viewport={{ once: true }}
+>
               <a href={project.link} target="_blank" 
                  className="bg-white rounded-xl overflow-hidden shadow-xl flex flex-col h-full hover:shadow-2xl transition duration-300 transform group-hover:-translate-y-2 group-hover:border-b-4 group-hover:border-primary">
                 <div className="h-40 bg-gradient-to-br from-blue-200 to-blue-400 relative overflow-hidden">

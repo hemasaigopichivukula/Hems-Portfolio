@@ -1,4 +1,5 @@
 import { technicalSkills, softSkills } from "@/lib/data";
+import { motion } from "framer-motion";
 
 export default function Skills() {
   return (
@@ -11,11 +12,11 @@ export default function Skills() {
           Skills & Certifications
         </h2>
         <div className="w-20 h-1 bg-primary mb-10"></div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-6 text-gray-700">Technical Skills</h3>
-            
+
             <div className="space-y-4">
               {technicalSkills.map((skill, index) => (
                 <div className="skill-item" key={index}>
@@ -24,19 +25,22 @@ export default function Skills() {
                     <span className="text-blue-600">{skill.level}</span>
                   </div>
                   <div className="w-full bg-blue-100 rounded-full h-2.5">
-                    <div 
-                      className="bg-blue-600 h-2.5 rounded-full" 
-                      style={{ width: `${skill.percentage}%` }}
-                    ></div>
+                    <motion.div 
+                      className="bg-blue-600 h-2.5 rounded-full"
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${skill.percentage}%` }}
+                      transition={{ duration: 1, ease: "easeOut" }}
+                      viewport={{ once: true }}
+                    ></motion.div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-          
+
           <div>
             <h3 className="text-xl font-bold mb-6 text-gray-700">Soft Skills & Certifications</h3>
-            
+
             <div className="grid grid-cols-2 gap-4">
               {softSkills.map((skill, index) => (
                 <div className="bg-blue-50 p-4 rounded-lg border border-blue-100" key={index}>
