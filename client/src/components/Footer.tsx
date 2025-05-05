@@ -23,7 +23,7 @@ export default function Footer() {
         
         <div className="border-t border-blue-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p>&copy; {new Date().getFullYear()} Hema Sai Gopi Chivukula. All rights reserved.</p>
-          <p className="mt-2 md:mt-0">Built with <i className="fas fa-heart text-red-500"></i> and modern web technologies</p>
+          <p className="mt-2 md:mt-0">&nbsp;</p>
         </div>
       </div>
     </footer>

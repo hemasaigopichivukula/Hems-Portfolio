@@ -1,6 +1,7 @@
 
 import React from "react"
 import { Card, CardContent } from "@/components/ui/card"
+import { motion } from "framer-motion"
 
 export default function Values() {
   return (
@@ -8,21 +9,18 @@ export default function Values() {
       <div className="container mx-auto px-4">
         <Card>
           <CardContent className="p-6">
-            <h2 className="text-3xl font-bold mb-8 text-center">Our Values</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <h3 className="text-xl font-semibold mb-3">Innovation</h3>
-                <p className="text-gray-600">Embracing new technologies and creative solutions</p>
-              </div>
-              <div className="text-center">
-                <h3 className="text-xl font-semibold mb-3">Excellence</h3>
-                <p className="text-gray-600">Striving for quality in everything we do</p>
-              </div>
-              <div className="text-center">
-                <h3 className="text-xl font-semibold mb-3">Collaboration</h3>
-                <p className="text-gray-600">Working together to achieve greater results</p>
-              </div>
-            </div>
+            <h2 className="text-3xl font-bold mb-8 text-center">The Philosophy</h2>
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+              className="text-center"
+            >
+              <p className="text-3xl font-serif italic text-gray-700 leading-relaxed">
+                "Innovation is not just about creating something new; it's about making a meaningful impact 
+                in the lives of others through thoughtful and purposeful solutions."
+              </p>
+            </motion.div>
           </CardContent>
         </Card>
       </div>
