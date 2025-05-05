@@ -8,10 +8,10 @@ export default function Navigation() {
     { id: "projects", label: "Solutions", icon: "fa-rocket" },
     { id: "skills", label: "Toolkit", icon: "fa-tools" },
     { id: "resume", label: "Resume", icon: "fa-file" },
-    { id: "writings", label: "Leadership Lens", icon: "fa-brain" },
-    { id: "values", label: "Values", icon: "fa-heart" },
-    { id: "mentors", label: "Mentors", icon: "fa-users" },
-    { id: "beyond", label: "Beyond", icon: "fa-smile" },
+    { id: "writings", label: "Ideology & Perspectives", icon: "fa-brain" },
+    { id: "values", label: "The Philosophy", icon: "fa-heart" },
+    { id: "mentors", label: "My Mentors", icon: "fa-users" },
+    { id: "beyond", label: "Beyond Tech", icon: "fa-smile" },
     { id: "contact", label: "Connect", icon: "fa-envelope" }
   ];
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -53,11 +53,13 @@ export default function Navigation() {
           </button>
           
           <ul className={`${isMobileMenuOpen ? 'flex' : 'hidden'} md:flex md:flex-row w-full md:w-auto pt-4 md:pt-0 flex-col md:space-x-8 space-y-2 md:space-y-0`}>
-            <li><a href="#about" className="hover:text-yellow-300 transition block py-1">About</a></li>
-            <li><a href="#experience" className="hover:text-yellow-300 transition block py-1">Experience</a></li>
-            <li><a href="#projects" className="hover:text-yellow-300 transition block py-1">Projects</a></li>
-            <li><a href="#skills" className="hover:text-yellow-300 transition block py-1">Skills</a></li>
-            <li><a href="#contact" className="hover:text-yellow-300 transition block py-1">Contact</a></li>
+            {menuItems.map((item) => (
+              <li key={item.id}>
+                <a href={`#${item.id}`} className="hover:text-yellow-300 transition block py-1">
+                  {item.label}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
