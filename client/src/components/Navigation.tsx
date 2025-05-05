@@ -40,8 +40,7 @@ export default function Navigation() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-wrap justify-between items-center">
           <a href="#" className="text-xl font-bold hover:text-yellow-300 transition">
-            <span className="hidden md:inline">Hema Sai Gopi Chivukula</span>
-            <span className="md:hidden">HSGC</span>
+            <span>Hema Sai Gopi Chivukula</span>
           </a>
           
           <button 
