@@ -8,7 +8,7 @@ export default function Navigation() {
     { id: "projects", label: "Projects", icon: "fa-rocket" },
     { id: "skills", label: "Skills", icon: "fa-tools" },
     { id: "resume", label: "Resume", icon: "fa-file" },
-    { id: "writings", label: "Ideology & Perspectives", icon: "fa-brain" },
+    { id: "writings", label: "Editorials", icon: "fa-brain" },
     { id: "values", label: "Philosophy", icon: "fa-heart" },
     { id: "mentors", label: "Mentors", icon: "fa-users" },
     { id: "beyond", label: "Beyond Tech", icon: "fa-smile" },
