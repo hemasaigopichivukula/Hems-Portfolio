@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 
 export default function Beyond() {
   return (
-    <section className="py-16">
+    <section id="beyond" className="py-16">
       <div className="container mx-auto px-4">
         <Card>
           <CardContent className="p-6">

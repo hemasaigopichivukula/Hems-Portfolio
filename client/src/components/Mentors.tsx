@@ -1,4 +1,3 @@
-
 import React, { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
@@ -19,7 +18,7 @@ export default function Mentors() {
   const [selectedMentor, setSelectedMentor] = useState(null);
 
   return (
-    <section className="py-16">
+    <section id="mentors" className="py-16">
       <div className="container mx-auto px-4">
         <Card>
           <CardContent className="p-6">

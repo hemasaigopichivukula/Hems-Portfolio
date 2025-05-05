@@ -59,8 +59,9 @@ export default function Navigation() {
               <li key={item.id}>
                 <button 
                 onClick={() => scrollToSection(item.id)} 
-                className="hover:text-yellow-300 transition block py-1 w-full text-left"
+                className="hover:text-yellow-300 transition block py-2 px-3 w-full text-left rounded-md hover:bg-blue-800"
               >
+                <i className={`fas ${item.icon} mr-2`}></i>
                 {item.label}
               </button>
               </li>

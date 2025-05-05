@@ -1,11 +1,10 @@
-
 import React from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { motion } from "framer-motion"
 
 export default function Values() {
   return (
-    <section className="py-16 bg-white">
+    <section id="values" className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <Card>
           <CardContent className="p-6">

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 
 export default function Resume() {
   return (
-    <section className="py-16">
+    <section id="resume" className="py-16">
       <div className="container mx-auto px-4">
         <Card>
           <CardContent className="p-6">
