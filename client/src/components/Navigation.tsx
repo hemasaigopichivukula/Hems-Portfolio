@@ -4,7 +4,6 @@ export default function Navigation() {
   const menuItems = [
     { id: "header", label: "Home", icon: "fa-home" },
     { id: "about", label: "About", icon: "fa-compass" },
-    { id: "experience", label: "Experience", icon: "fa-book" },
     { id: "projects", label: "Projects", icon: "fa-rocket" },
     { id: "skills", label: "Skills", icon: "fa-tools" },
     { id: "gallery", label: "Gallery", icon: "fa-images" },
