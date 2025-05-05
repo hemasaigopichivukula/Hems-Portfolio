@@ -1,6 +1,19 @@
 import { useState, useEffect } from "react";
 
 export default function Navigation() {
+  const menuItems = [
+    { id: "hero", label: "Home", icon: "fa-home" },
+    { id: "why", label: "Why", icon: "fa-compass" },
+    { id: "experience", label: "Impact", icon: "fa-book" },
+    { id: "projects", label: "Solutions", icon: "fa-rocket" },
+    { id: "skills", label: "Toolkit", icon: "fa-tools" },
+    { id: "resume", label: "Resume", icon: "fa-file" },
+    { id: "writings", label: "Leadership Lens", icon: "fa-brain" },
+    { id: "values", label: "Values", icon: "fa-heart" },
+    { id: "mentors", label: "Mentors", icon: "fa-users" },
+    { id: "beyond", label: "Beyond", icon: "fa-smile" },
+    { id: "contact", label: "Connect", icon: "fa-envelope" }
+  ];
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
