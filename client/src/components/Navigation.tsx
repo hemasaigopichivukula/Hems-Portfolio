@@ -35,6 +35,13 @@ export default function Navigation() {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <nav id="navbar" className={`bg-blue-900 text-white ${scrolled ? 'py-2' : 'py-4'} px-6 sticky top-0 z-50 shadow-md transition-all duration-300`}>
       <div className="max-w-6xl mx-auto">
@@ -46,13 +53,16 @@ export default function Navigation() {
           >
             <i className="fas fa-bars text-2xl"></i>
           </button>
-          
+
           <ul className={`${isMobileMenuOpen ? 'flex' : 'hidden'} md:flex md:flex-row w-full md:w-auto pt-4 md:pt-0 flex-col md:space-x-8 space-y-2 md:space-y-0`}>
             {menuItems.map((item) => (
               <li key={item.id}>
-                <a href={`#${item.id}`} className="hover:text-yellow-300 transition block py-1">
-                  {item.label}
-                </a>
+                <button 
+                onClick={() => scrollToSection(item.id)} 
+                className="hover:text-yellow-300 transition block py-1 w-full text-left"
+              >
+                {item.label}
+              </button>
               </li>
             ))}
           </ul>
