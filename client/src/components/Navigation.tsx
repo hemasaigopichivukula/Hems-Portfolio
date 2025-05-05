@@ -39,10 +39,6 @@ export default function Navigation() {
     <nav id="navbar" className={`bg-blue-900 text-white ${scrolled ? 'py-2' : 'py-4'} px-6 sticky top-0 z-50 shadow-md transition-all duration-300`}>
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-wrap justify-between items-center">
-          <a href="#" className="text-xl font-bold hover:text-yellow-300 transition">
-            <span>Hema Sai Gopi Chivukula</span>
-          </a>
-          
           <button 
             id="mobileMenuBtn" 
             className="md:hidden text-white focus:outline-none"
