@@ -2,17 +2,17 @@ import { useState, useEffect } from "react";
 
 export default function Navigation() {
   const menuItems = [
-    { id: "hero", label: "Home", icon: "fa-home" },
-    { id: "why", label: "Why", icon: "fa-compass" },
-    { id: "experience", label: "Impact", icon: "fa-book" },
-    { id: "projects", label: "Solutions", icon: "fa-rocket" },
-    { id: "skills", label: "Toolkit", icon: "fa-tools" },
+    { id: "header", label: "Home", icon: "fa-home" },
+    { id: "about", label: "About", icon: "fa-compass" },
+    { id: "experience", label: "Experience", icon: "fa-book" },
+    { id: "projects", label: "Projects", icon: "fa-rocket" },
+    { id: "skills", label: "Skills", icon: "fa-tools" },
     { id: "resume", label: "Resume", icon: "fa-file" },
     { id: "writings", label: "Ideology & Perspectives", icon: "fa-brain" },
-    { id: "values", label: "The Philosophy", icon: "fa-heart" },
-    { id: "mentors", label: "My Mentors", icon: "fa-users" },
+    { id: "values", label: "Philosophy", icon: "fa-heart" },
+    { id: "mentors", label: "Mentors", icon: "fa-users" },
     { id: "beyond", label: "Beyond Tech", icon: "fa-smile" },
-    { id: "contact", label: "Connect", icon: "fa-envelope" }
+    { id: "contact", label: "Contact", icon: "fa-envelope" }
   ];
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
