@@ -1,5 +1,5 @@
-import { projectsData } from "@/lib/data";
 
+import { projectsData } from "@/lib/data";
 import { motion } from "framer-motion";
 
 export default function Projects() {
@@ -17,13 +17,13 @@ export default function Projects() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projectsData.map((project, index) => (
             <motion.div
-  className="group card-hover"
-  key={index}
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.5, delay: index * 0.1 }}
-  viewport={{ once: true }}
->
+              className="group card-hover"
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
               <a href={project.link} target="_blank" 
                  className="bg-white rounded-xl overflow-hidden shadow-xl flex flex-col h-full hover:shadow-2xl transition duration-300 transform group-hover:-translate-y-2 group-hover:border-b-4 group-hover:border-primary">
                 <div className="h-40 bg-gradient-to-br from-blue-200 to-blue-400 relative overflow-hidden">
@@ -55,7 +55,7 @@ export default function Projects() {
                   </span>
                 </div>
               </a>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
