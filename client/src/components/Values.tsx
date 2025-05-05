@@ -1,7 +1,7 @@
 
 import { motion } from "framer-motion";
 
-function Values() {
+export default function Values() {
   return (
     <section id="values" className="py-16">
       <div className="container mx-auto px-4">
@@ -13,9 +13,9 @@ function Values() {
             transition={{ duration: 0.5 }}
             className="bg-white p-6 rounded-lg shadow-lg"
           >
-            <h3 className="text-xl font-semibold mb-4">Continuous Learning</h3>
+            <h3 className="text-xl font-semibold mb-4">Strategic Problem-Solving</h3>
             <p className="text-gray-600">
-              Embracing growth through constant learning and adaptation in our ever-evolving technological landscape.
+              Transform complex challenges into structured, actionable solutions through systematic analysis and innovative thinking.
             </p>
           </motion.div>
 
@@ -25,9 +25,9 @@ function Values() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="bg-white p-6 rounded-lg shadow-lg"
           >
-            <h3 className="text-xl font-semibold mb-4">Innovation First</h3>
+            <h3 className="text-xl font-semibold mb-4">Data-Driven Leadership</h3>
             <p className="text-gray-600">
-              Pushing boundaries and thinking outside the box to create meaningful solutions that drive progress.
+              Empower decision-making through clear metrics and insights, turning information into actionable strategies.
             </p>
           </motion.div>
 
@@ -37,9 +37,9 @@ function Values() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="bg-white p-6 rounded-lg shadow-lg"
           >
-            <h3 className="text-xl font-semibold mb-4">User-Centric Design</h3>
+            <h3 className="text-xl font-semibold mb-4">Continuous Growth</h3>
             <p className="text-gray-600">
-              Placing user needs at the forefront of every decision to create intuitive and impactful experiences.
+              Embrace learning and adaptation as core principles, staying ahead in our evolving business landscape.
             </p>
           </motion.div>
         </div>
@@ -47,5 +47,3 @@ function Values() {
     </section>
   );
 }
-
-export default Values;
