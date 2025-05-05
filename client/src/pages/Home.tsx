@@ -11,7 +11,7 @@ import Values from "@/components/Values";
 import Mentors from "@/components/Mentors";
 import Beyond from "@/components/Beyond";
 import Writings from "@/components/Writings";
-import Resume from "@/components/Resume";
+import Gallery from "@/components/Resume";
 
 export default function Home() {
   return (
@@ -23,7 +23,7 @@ export default function Home() {
         <Experience />
         <Projects />
         <Skills />
-        <Resume />
+        <Gallery />
         <Writings />
         <Values />
         <Mentors />

@@ -20,6 +20,32 @@ export default function Header() {
         <p className="text-lg md:text-xl text-blue-100 mt-2 max-w-2xl mx-auto">
           MBA mind behind streamlined solutions — where strategy meets simplicity
         </p>
+        <div className="flex justify-center gap-4 mt-6">
+          <Button 
+            asChild
+            variant="secondary"
+            size="lg"
+            className="bg-white text-blue-900 hover:bg-blue-50"
+          >
+            <a href="/path-to-resume.pdf" target="_blank">Resume</a>
+          </Button>
+          <Button 
+            asChild
+            variant="secondary"
+            size="lg"
+            className="bg-white text-blue-900 hover:bg-blue-50"
+          >
+            <a href="https://www.linkedin.com/in/hemasaigopichivukula/" target="_blank">LinkedIn</a>
+          </Button>
+          <Button 
+            asChild
+            variant="secondary"
+            size="lg"
+            className="bg-white text-blue-900 hover:bg-blue-50"
+          >
+            <a href="mailto:contact@hemasai.com">Email</a>
+          </Button>
+        </div>
       </div>
 
       
