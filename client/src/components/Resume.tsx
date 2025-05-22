@@ -6,20 +6,20 @@ const galleryItems = [
   {
     type: "image",
     url: "/attached_assets/Team 2024-2025.HEIC", 
-    title: "UCR Business School Team 2024-2025",
-    description: "Group photo with the business school team showing team spirit"
+    title: "UCR Product Club Team 2024-2025",
+    description: "Leading innovation and product development initiatives at UCR"
   },
   {
     type: "image",
     url: "/attached_assets/AI Pitch 2025.jpg", 
-    title: "Group Photo at UCR Business School",
-    description: "Team photo at the UC Riverside School of Business"
+    title: "AI Pitch Competition 2025",
+    description: "Successfully presented innovative AI solutions at UCR's annual competition"
   },
   {
     type: "image",
     url: "/attached_assets/Best Analyst- Amazon.jpg",
-    title: "Award Ceremony",
-    description: "Recognition ceremony for outstanding achievements"
+    title: "Best Analyst Award at Amazon",
+    description: "Recognized for exceptional analytical performance and strategic impact"
   }
 ];
 
