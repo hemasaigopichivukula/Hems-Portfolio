@@ -6,9 +6,9 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 const galleryItems = [
   {
     type: "image", 
-    url: "/attached_assets/AI Pitch 2024.JPG",
-    title: "AI Pitch Competition 2024",
-    description: "Participating in the AI Innovation Pitch Competition"
+    url: "/attached_assets/image_1747939455451.png",
+    title: "Award Ceremony Recognition",
+    description: "Receiving recognition at a formal ceremony"
   },
   {
     type: "image",
