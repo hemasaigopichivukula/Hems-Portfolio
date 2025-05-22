@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "./ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
 
-import award1 from "../../attached_assets/image_1747939455451.png";
-import award2 from "../../attached_assets/AI Pitch 2025.jpg";
-import award3 from "../../attached_assets/Best Analyst- Amazon.jpg";
+import award1 from "/attached_assets/image_1747939455451.png";
+import award2 from "/attached_assets/AI Pitch 2025.jpg";
+import award3 from "/attached_assets/Best Analyst- Amazon.jpg";
 
 const galleryItems = [
   {
