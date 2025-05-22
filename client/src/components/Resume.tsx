@@ -6,19 +6,19 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 const galleryItems = [
   {
     type: "image",
-    url: "/attached_assets/AI Pitch 2024.JPG",
+    url: "attached_assets/AI Pitch 2024.JPG",
     title: "AI Pitch Competition 2024",
     description: "Participating in the AI Innovation Pitch Competition"
   },
   {
     type: "image",
-    url: "/attached_assets/AI Pitch 2025.jpg",
+    url: "attached_assets/AI Pitch 2025.jpg",
     title: "Group Photo at UCR Business School",
     description: "Team photo at the UC Riverside School of Business"
   },
   {
     type: "image",
-    url: "/attached_assets/Best Analyst- Amazon.jpg",
+    url: "attached_assets/Best Analyst- Amazon.jpg",
     title: "Award Ceremony",
     description: "Recognition ceremony for outstanding achievements"
   }
