@@ -6,19 +6,19 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 const galleryItems = [
   {
     type: "image", 
-    url: new URL('../../attached_assets/image_1747939455451.png', import.meta.url).href,
+    url: "/attached_assets/image_1747939455451.png",
     title: "Award Ceremony Recognition",
     description: "Receiving recognition at a formal ceremony"
   },
   {
     type: "image",
-    url: new URL('../../attached_assets/AI Pitch 2025.jpg', import.meta.url).href,
+    url: "/attached_assets/AI Pitch 2025.jpg", 
     title: "Group Photo at UCR Business School",
     description: "Team photo at the UC Riverside School of Business"
   },
   {
     type: "image",
-    url: new URL('../../attached_assets/Best Analyst- Amazon.jpg', import.meta.url).href,
+    url: "/attached_assets/Best Analyst- Amazon.jpg",
     title: "Award Ceremony",
     description: "Recognition ceremony for outstanding achievements"
   }
