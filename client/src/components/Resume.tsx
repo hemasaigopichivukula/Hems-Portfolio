@@ -5,9 +5,15 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 const galleryItems = [
   {
     type: "image",
-    url: "/attached_assets/Team 2024-2025.jpg", 
+    url: "/attached_assets/Team 2024-2025.HEIC", 
     title: "UCR Business School Team 2024-2025",
-    description: "Group photo with the UCR Business School team showing team spirit"
+    description: "Group photo with the business school team showing team spirit"
+  },
+  {
+    type: "image", 
+    url: "/attached_assets/image_1747939455451.png",
+    title: "Award Ceremony Recognition",
+    description: "Receiving recognition at a formal ceremony"
   },
   {
     type: "image",
