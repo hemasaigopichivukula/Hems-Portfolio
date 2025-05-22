@@ -3,22 +3,26 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "./ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
 
+import award1 from "../../attached_assets/image_1747939455451.png";
+import award2 from "../../attached_assets/AI Pitch 2025.jpg";
+import award3 from "../../attached_assets/Best Analyst- Amazon.jpg";
+
 const galleryItems = [
   {
     type: "image", 
-    url: "/attached_assets/image_1747939455451.png",
+    url: award1,
     title: "Award Ceremony Recognition",
     description: "Receiving recognition at a formal ceremony"
   },
   {
     type: "image",
-    url: "/attached_assets/AI Pitch 2025.jpg", 
+    url: award2, 
     title: "Group Photo at UCR Business School",
     description: "Team photo at the UC Riverside School of Business"
   },
   {
     type: "image",
-    url: "/attached_assets/Best Analyst- Amazon.jpg",
+    url: award3,
     title: "Award Ceremony",
     description: "Recognition ceremony for outstanding achievements"
   }
