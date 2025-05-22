@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hema Sai Gopi Chivukula | Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gradient-to-r from-blue-50 to-blue-100 text-gray-800">
+  <header class="text-center py-12 bg-blue-900 text-white shadow-lg">
+    <img src="profile.jpg" alt="Hema Sai" class="mx-auto rounded-full w-32 shadow-xl mb-4">
+    <h1 class="text-4xl font-bold" data-aos="fade-down">Hema Sai Gopi Chivukula</h1>
+    <p class="text-lg mt-2" data-aos="fade-up">MBA mind behind streamlined solutions — where strategy meets simplicity</p>
+  </header>
+
+  <nav class="bg-blue-800 text-white p-4 sticky top-0 z-50 shadow-md">
+    <ul class="flex justify-center space-x-8">
+      <li><a href="#about" class="hover:text-yellow-300">About</a></li>
+      <li><a href="#experience" class="hover:text-yellow-300">Experience</a></li>
+      <li><a href="#projects" class="hover:text-yellow-300">Projects</a></li>
+      <li><a href="#skills" class="hover:text-yellow-300">Skills</a></li>
+      <li><a href="#contact" class="hover:text-yellow-300">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="about" class="max-w-4xl mx-auto py-12 px-6" data-aos="fade-up">
+    <h2 class="text-3xl font-bold text-blue-700 mb-4">About Me</h2>
+    <p>I help organizations improve efficiency while fostering leadership and personal growth. I simplify complex systems and build people-centered strategies for lasting impact.</p>
+  </section>
+
+  <section id="experience" class="bg-white py-12" data-aos="fade-right">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-blue-700 mb-4">Experience & Achievements</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li><strong>Executive Intern – Just Us 4 Youth (2024–Present):</strong> Improved data processes and project management systems.</li>
+        <li><strong>Business Analyst – Amazon ADS:</strong> Improved delivery rates by 24% for 14 global clients.</li>
+        <li><strong>Program Manager – Amazon GO-AI:</strong> Reduced onboarding time by 30%.</li>
+        <li><strong>Real-Time Analyst – Amazon:</strong> Maintained 98% SLA compliance.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects" class="max-w-4xl mx-auto py-12 px-6" data-aos="fade-up">
+    <h2 class="text-3xl font-bold text-blue-700 mb-4">Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <a href="https://github.com/hemasai/ai-pitch-ucr" target="_blank" class="bg-white p-4 rounded-lg shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1" data-aos="zoom-in">
+        <h3 class="text-xl font-semibold flex items-center gap-2">
+          <i class="fab fa-github text-gray-700"></i> AI Pitch Competition
+        </h3>
+        <p class="text-sm">Inter-university event with 10+ schools involved.</p>
+        <span class="inline-block mt-2 text-blue-600 underline">View Project</span>
+      </a>
+      <a href="https://github.com/hemasai/amazon-control-tower" target="_blank" class="bg-white p-4 rounded-lg shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1" data-aos="zoom-in">
+        <h3 class="text-xl font-semibold flex items-center gap-2">
+          <i class="fab fa-github text-gray-700"></i> Amazon Control Tower
+        </h3>
+        <p class="text-sm">Centralized real-time monitoring system launch.</p>
+        <span class="inline-block mt-2 text-blue-600 underline">View Project</span>
+      </a>
+      <a href="https://github.com/hemasai/break-adherence-dashboard" target="_blank" class="bg-white p-4 rounded-lg shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1" data-aos="zoom-in">
+        <h3 class="text-xl font-semibold flex items-center gap-2">
+          <i class="fab fa-github text-gray-700"></i> Break Adherence Dashboard
+        </h3>
+        <p class="text-sm">Improved SLA through smarter tracking.</p>
+        <span class="inline-block mt-2 text-blue-600 underline">View Project</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="skills" class="bg-white py-12" data-aos="fade-left">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-blue-700 mb-4">Skills & Certifications</h2>
+      <p>Excel, Tableau, SQL, Python, Asana, Monday.com, Strategic Thinking, PMP, Scrum</p>
+    </div>
+  </section>
+
+  <section id="contact" class="max-w-4xl mx-auto py-12 px-6" data-aos="fade-up">
+    <h2 class="text-3xl font-bold text-blue-700 mb-4">Contact</h2>
+    <form action="mailto:your.email@example.com" method="post" enctype="text/plain" class="bg-white p-6 rounded-lg shadow-xl space-y-4">
+      <input type="text" name="name" placeholder="Your Name" class="w-full p-3 border rounded" required>
+      <input type="email" name="email" placeholder="Your Email" class="w-full p-3 border rounded" required>
+      <textarea name="message" rows="5" placeholder="Your Message" class="w-full p-3 border rounded" required></textarea>
+      <button type="submit" class="bg-blue-700 text-white px-6 py-2 rounded hover:bg-blue-900">Send Message</button>
+    </form>
+    <div class="text-center mt-6">
+      <a href="https://www.linkedin.com/in/hemasaigopichivukula/" class="text-blue-700 font-semibold" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    </div>
+  </section>
+
+  <footer class="bg-blue-900 text-white text-center p-4 mt-12">
+    <p>&copy; 2025 Hema Sai Gopi Chivukula</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>
