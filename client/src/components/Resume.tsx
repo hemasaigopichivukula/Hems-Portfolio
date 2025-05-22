@@ -10,19 +10,19 @@ import award3 from "/attached_assets/Best Analyst- Amazon.jpg";
 const galleryItems = [
   {
     type: "image", 
-    url: award1,
+    url: "/attached_assets/image_1747939455451.png",
     title: "Award Ceremony Recognition",
     description: "Receiving recognition at a formal ceremony"
   },
   {
     type: "image",
-    url: award2, 
-    title: "Group Photo at UCR Business School",
+    url: "/attached_assets/AI Pitch 2025.jpg",
+    title: "Group Photo at UCR Business School", 
     description: "Team photo at the UC Riverside School of Business"
   },
   {
     type: "image",
-    url: award3,
+    url: "/attached_assets/Best Analyst- Amazon.jpg",
     title: "Award Ceremony",
     description: "Recognition ceremony for outstanding achievements"
   }
