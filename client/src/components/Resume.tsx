@@ -1,21 +1,27 @@
 
-import { Card, CardContent } from "@/components/ui/card"
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
+import { Card, CardContent } from "./ui/card";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
 
 const galleryItems = [
   {
     type: "image",
-    url: "/path-to-award-image.jpg",
-    title: "Achievement Award",
-    description: "Received for outstanding performance"
+    url: "/attached_assets/AI Pitch 2024.JPG",
+    title: "AI Pitch Competition 2024",
+    description: "Participating in the AI Innovation Pitch Competition"
   },
   {
     type: "image",
-    url: "/path-to-speech-image.jpg",
-    title: "Keynote Speech",
-    description: "Speaking at tech conference"
+    url: "/attached_assets/AI Pitch 2025.jpg",
+    title: "Group Photo at UCR Business School",
+    description: "Team photo at the UC Riverside School of Business"
+  },
+  {
+    type: "image",
+    url: "/attached_assets/Best Analyst- Amazon.jpg",
+    title: "Award Ceremony",
+    description: "Recognition ceremony for outstanding achievements"
   }
-  // Add more items as needed
 ];
 
 export default function Gallery() {
@@ -23,32 +29,37 @@ export default function Gallery() {
     <section id="gallery" className="py-16">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-8 text-center">Gallery</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {galleryItems.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <Card className="overflow-hidden">
-                <CardContent className="p-0">
-                  <img 
-                    src={item.url} 
-                    alt={item.title}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-4">
-                    <h3 className="font-semibold mb-2">{item.title}</h3>
-                    <p className="text-gray-600">{item.description}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
+        <Carousel className="w-full max-w-4xl mx-auto">
+          <CarouselContent>
+            {galleryItems.map((item, index) => (
+              <CarouselItem key={index}>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <Card className="overflow-hidden">
+                    <CardContent className="p-0">
+                      <img 
+                        src={item.url} 
+                        alt={item.title}
+                        className="w-full h-[500px] object-cover"
+                      />
+                      <div className="p-6 bg-white/90 absolute bottom-0 w-full">
+                        <h3 className="font-semibold text-xl mb-2">{item.title}</h3>
+                        <p className="text-gray-600">{item.description}</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="left-4" />
+          <CarouselNext className="right-4" />
+        </Carousel>
       </div>
     </section>
-  )
+  );
 }
