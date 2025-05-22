@@ -5,20 +5,20 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 
 const galleryItems = [
   {
-    type: "image",
-    url: "/attached_assets/AI Pitch 2024.JPG",
+    type: "image", 
+    url: "attached_assets/AI Pitch 2024.JPG",
     title: "AI Pitch Competition 2024",
     description: "Participating in the AI Innovation Pitch Competition"
   },
   {
     type: "image",
-    url: "/attached_assets/AI Pitch 2025.jpg",
+    url: "attached_assets/AI Pitch 2025.jpg", 
     title: "Group Photo at UCR Business School",
     description: "Team photo at the UC Riverside School of Business"
   },
   {
     type: "image",
-    url: "/attached_assets/Best Analyst- Amazon.jpg",
+    url: "attached_assets/Best Analyst- Amazon.jpg",
     title: "Award Ceremony",
     description: "Recognition ceremony for outstanding achievements"
   }
@@ -44,7 +44,7 @@ export default function Gallery() {
                       <img 
                         src={item.url} 
                         alt={item.title}
-                        className="w-full h-[600px] object-cover rounded-lg shadow-lg"
+                        className="w-full h-[600px] object-contain bg-white rounded-lg shadow-lg"
                       />
                       <div className="p-6 bg-white/95 absolute bottom-0 w-full backdrop-blur-sm rounded-b-lg">
                         <h3 className="font-semibold text-xl mb-2">{item.title}</h3>
