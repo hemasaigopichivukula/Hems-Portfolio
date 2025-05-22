@@ -5,20 +5,32 @@ import { motion } from "framer-motion"
 
 const perspectives = [
   {
-    title: "Innovation Strategy",
-    content: "Exploring the intersection of technology and business value"
+    title: "One Year, One Vision: The AI Pitch Competition Journey",
+    content: "From concept to reality—building an inter-university AI competition and the leadership lessons learned along the way."
   },
   {
-    title: "Leadership Principles",
-    content: "Building and scaling high-performing teams"
+    title: "What Makes a Great Mentor—and Why I Found Four",
+    content: "How mentors from Amazon, academia, entrepreneurship, and design shaped my understanding of leadership beyond theory."
   },
   {
-    title: "Digital Transformation",
-    content: "Navigating the challenges of modern enterprise evolution"
+    title: "Beyond Execution: From Operations to Strategy",
+    content: "My evolution from managing tasks to leading vision, and how strategy becomes a mindset rather than a title."
   },
   {
-    title: "Future of Tech",
-    content: "Insights on emerging technologies and their impact"
+    title: "From Amazon Metrics to Meaningful Impact",
+    content: "Transitioning from corporate metrics to nonprofit outcomes, and finding purpose as the new KPI."
+  },
+  {
+    title: "AI as a Strategic Mentor",
+    content: "How AI can serve as a mindset coach and strategic partner beyond just a tool for tasks and applications."
+  },
+  {
+    title: "Probing and Bias for Action",
+    content: "The twin engines of progress: how deep questioning and decisive action drive leadership success."
+  },
+  {
+    title: "Lead Like a Community Builder",
+    content: "Building trust, fostering psychological safety, and creating space for shared ownership in leadership."
   }
 ];
 
