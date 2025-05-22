@@ -26,10 +26,10 @@ const galleryItems = [
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="py-16">
+    <section id="gallery" className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8 text-center">Gallery</h2>
-        <Carousel className="w-full max-w-4xl mx-auto">
+        <h2 className="text-3xl font-bold mb-12 text-center">Gallery</h2>
+        <Carousel className="w-full max-w-5xl mx-auto">
           <CarouselContent>
             {galleryItems.map((item, index) => (
               <CarouselItem key={index}>
@@ -44,9 +44,9 @@ export default function Gallery() {
                       <img 
                         src={item.url} 
                         alt={item.title}
-                        className="w-full h-[500px] object-cover"
+                        className="w-full h-[600px] object-cover rounded-lg shadow-lg"
                       />
-                      <div className="p-6 bg-white/90 absolute bottom-0 w-full">
+                      <div className="p-6 bg-white/95 absolute bottom-0 w-full backdrop-blur-sm rounded-b-lg">
                         <h3 className="font-semibold text-xl mb-2">{item.title}</h3>
                         <p className="text-gray-600">{item.description}</p>
                       </div>
