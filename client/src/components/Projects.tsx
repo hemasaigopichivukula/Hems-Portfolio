@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-16 px-6">
+    <section id="projects" className="py-20 px-6">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl font-bold text-primary mb-2 flex items-center">
           <span className="bg-primary text-white w-10 h-10 rounded-full inline-flex items-center justify-center mr-3">

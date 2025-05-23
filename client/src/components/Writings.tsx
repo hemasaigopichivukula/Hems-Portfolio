@@ -1,4 +1,3 @@
-
 import React from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { motion } from "framer-motion"
@@ -68,7 +67,7 @@ This shift has changed how I lead. I now strive to be someone who not only deliv
 
 export default function Writings() {
   return (
-    <section id="writings" className="py-16 bg-blue-900">
+    <section id="writings" className="py-20 bg-blue-900">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-8 text-center text-white">Editorials</h2>
         <div className="overflow-hidden">
