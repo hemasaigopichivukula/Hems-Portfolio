@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 
 export default function Values() {
@@ -5,16 +6,16 @@ export default function Values() {
     <section id="values" className="py-20 px-6">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-8 text-center">Core Values & Philosophy</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="bg-white p-6 rounded-lg shadow-lg"
           >
-            <h3 className="text-xl font-semibold mb-4">Strategic Problem-Solving</h3>
+            <h3 className="text-xl font-semibold mb-4">Empowerment with Ownership</h3>
             <p className="text-gray-600">
-              Transform complex challenges into structured, actionable solutions through systematic analysis and innovative thinking.
+              True leadership means enabling others to lead with confidence. I take complete ownership of initiatives while creating structures where teams can thrive and grow beyond their roles—from organizing the AI Pitch Competition to mentoring new team members.
             </p>
           </motion.div>
 
@@ -24,9 +25,9 @@ export default function Values() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="bg-white p-6 rounded-lg shadow-lg"
           >
-            <h3 className="text-xl font-semibold mb-4">Data-Driven Leadership</h3>
+            <h3 className="text-xl font-semibold mb-4">Curiosity with Purpose</h3>
             <p className="text-gray-600">
-              Empower decision-making through clear metrics and insights, turning information into actionable strategies.
+              I transform curiosity into impact by exploring emerging tools and perspectives, especially in AI and cross-functional collaboration. This approach drives innovation, challenges the status quo, and builds solutions that matter.
             </p>
           </motion.div>
 
@@ -36,9 +37,9 @@ export default function Values() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="bg-white p-6 rounded-lg shadow-lg"
           >
-            <h3 className="text-xl font-semibold mb-4">Continuous Growth</h3>
+            <h3 className="text-xl font-semibold mb-4">Integrity in Execution</h3>
             <p className="text-gray-600">
-              Embrace learning and adaptation as core principles, staying ahead in our evolving business landscape.
+              Excellence lies in both results and process. I prioritize clear communication, respectful collaboration, and ethical decision-making. My work focuses on building outcomes that are effective, trustworthy, and sustainable.
             </p>
           </motion.div>
         </div>
