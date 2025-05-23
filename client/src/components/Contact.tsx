@@ -19,7 +19,7 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.name || !formData.email || !formData.message) {
       toast({
         title: "Error",
@@ -28,17 +28,17 @@ export default function Contact() {
       });
       return;
     }
-    
+
     setIsSubmitting(true);
-    
+
     try {
       await apiRequest("POST", "/api/contact", formData);
-      
+
       toast({
         title: "Success!",
         description: "Your message has been sent successfully.",
       });
-      
+
       // Reset form
       setFormData({
         name: "",
@@ -67,24 +67,24 @@ export default function Contact() {
           Contact Me
         </h2>
         <div className="w-20 h-1 bg-primary mb-10"></div>
-        
+
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="lg:w-1/3">
             <div className="bg-white rounded-xl shadow-xl p-6">
               <h3 className="text-xl font-bold mb-4 text-primary">Get In Touch</h3>
               <p className="mb-6">Feel free to reach out with opportunities, questions, or just to say hello!</p>
-              
+
               <div className="space-y-4">
-                <a href="mailto:contact@hemasai.com" className="flex items-start space-x-3 hover:text-primary transition-colors">
+                <a href="mailto:hchiv001@ucr.edu" className="flex items-start space-x-3 hover:text-primary transition-colors">
                   <div className="bg-blue-100 text-primary p-2 rounded-full">
                     <i className="fas fa-envelope"></i>
                   </div>
                   <div>
                     <p className="font-medium">Email</p>
-                    <p className="text-gray-600">contact@hemasai.com</p>
+                    <p className="text-gray-600">hchiv001@ucr.edu</p>
                   </div>
                 </a>
-                
+
                 <a href="https://www.linkedin.com/in/hemasaigopichivukula/" target="_blank" className="flex items-start space-x-3 hover:text-primary transition-colors">
                   <div className="bg-blue-100 text-primary p-2 rounded-full">
                     <i className="fab fa-linkedin-in"></i>
@@ -94,7 +94,7 @@ export default function Contact() {
                     <p className="text-gray-600">Connect with me</p>
                   </div>
                 </a>
-                
+
                 <div className="flex items-start space-x-3">
                   <div className="bg-blue-100 text-primary p-2 rounded-full">
                     <i className="fas fa-map-marker-alt"></i>
@@ -107,7 +107,7 @@ export default function Contact() {
               </div>
             </div>
           </div>
-          
+
           <div className="lg:w-2/3">
             <form onSubmit={handleSubmit} className="bg-white p-8 rounded-xl shadow-xl">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -138,7 +138,7 @@ export default function Contact() {
                   />
                 </div>
               </div>
-              
+
               <div className="mb-6">
                 <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">Subject</label>
                 <input 
@@ -152,7 +152,7 @@ export default function Contact() {
                   required 
                 />
               </div>
-              
+
               <div className="mb-6">
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
                 <textarea 
@@ -166,7 +166,7 @@ export default function Contact() {
                   required
                 ></textarea>
               </div>
-              
+
               <button 
                 type="submit" 
                 disabled={isSubmitting}

@@ -13,25 +13,14 @@ export default function About() {
         <div className="flex flex-col md:flex-row gap-8 items-center">
           <div className="md:w-2/3">
             <p className="text-lg leading-relaxed mb-4">
-              I'm a strategic problem-solver who doesn't just build tools — I engineer clarity.
+              I'm a strategic problem-solver focused on engineering clarity from complexity.
             </p>
             <p className="text-lg leading-relaxed mb-4">
-              With an MBA and experience at Amazon and mission-driven organizations, I specialize in identifying operational blind spots, uncovering hidden inefficiencies, and transforming chaos into structured, actionable systems.
+              With an MBA and experience at Amazon and mission-driven organizations, I transform operational challenges into structured, actionable systems through deep analysis and innovative solutions.
             </p>
             <p className="text-lg leading-relaxed mb-4">
-              My process starts with asking the right questions. I dive deep to understand what's broken, why it matters, and how it can be fixed — then I build tailored solutions that drive visibility, streamline processes, and empower leaders to make data-backed decisions.
+              My approach combines analytical thinking with practical execution—turning complex problems into clear, measurable results that drive organizational success.
             </p>
-            <p className="text-lg leading-relaxed mb-4">
-              Whether it's a workflow bottleneck, a misaligned strategy, or a buried opportunity, I turn complexity into clarity and ideas into results.
-            </p>
-            <div className="flex gap-4 mt-6">
-              <a href="https://www.linkedin.com/in/hemasaigopichivukula/" target="_blank" className="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg flex items-center hover:bg-blue-200 transition">
-                <i className="fab fa-linkedin mr-2"></i> LinkedIn
-              </a>
-              <a href="#" className="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg flex items-center hover:bg-blue-200 transition">
-                <i className="fas fa-file-pdf mr-2"></i> Download Resume
-              </a>
-            </div>
           </div>
           <div className="md:w-1/3">
             <div className="bg-white rounded-lg shadow-xl p-6">

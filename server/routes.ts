@@ -15,16 +15,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/contact", async (req, res) => {
     try {
       const { name, email, subject, message } = req.body as ContactFormData;
-      
+
       // Validate the request body
       if (!name || !email || !message) {
         return res.status(400).json({ message: "Missing required fields" });
       }
-      
+
       // In a real implementation, you would send an email here
       // This is a mock implementation for the portfolio site
       console.log("Contact form submission:", { name, email, subject, message });
-      
+
       // Return a success response
       return res.status(200).json({ 
         message: "Message received successfully! We'll be in touch soon." 
