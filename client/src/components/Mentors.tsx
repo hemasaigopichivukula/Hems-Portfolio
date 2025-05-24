@@ -59,7 +59,7 @@ export default function Mentors() {
                     <img
                       src={mentor.image}
                       alt={mentor.name}
-                      className="w-full h-full object-cover transition-all"
+                      className="w-full h-full object-contain transition-all"
                     />
                   </div>
                   <div className="text-center mt-2">
