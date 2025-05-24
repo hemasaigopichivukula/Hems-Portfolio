@@ -55,11 +55,11 @@ export default function Mentors() {
                   className="cursor-pointer flex flex-col items-center"
                   onClick={() => setSelectedMentor(mentor)}
                 >
-                  <div className="relative w-32 h-32 mb-4">
+                  <div className="relative w-32 h-32 mb-4 overflow-hidden">
                     <img
                       src={mentor.image}
                       alt={mentor.name}
-                      className="w-full h-full object-cover rounded-full transition-all"
+                      className="w-full h-full object-contain rounded-full transition-all"
                     />
                   </div>
                   <div className="text-center mt-2">
