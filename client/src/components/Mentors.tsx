@@ -10,7 +10,7 @@ const mentors = [
     role: "Sr. Workforce Manager at Amazon",
     impact: "Ravi Teja Kakkerla is a Sr. Workforce Manager at Amazon and was my reporting manager for over 3.5 years during my tenure there. He is the embodiment of leadership that empowers rather than controls. He taught me that talent and commitment are enough to get recognized and promoted. His leadership style—marked by humility, openness to feedback, and a trust-first mindset—gave me the freedom to explore, innovate, and grow. Thanks to his mentorship, I was promoted from L2 to L4 in just 15 months.",
     linkedin: "https://www.linkedin.com/in/raviteja030690/",
-    image: "attached_assets/Ravi Teja Kakkerla.jpg"
+    image: "/attached_assets/Ravi Teja Kakkerla.jpg"
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const mentors = [
     role: "Senior Cloud Applications Test Engineer",
     impact: "Sabarish R Sethuraman, an entrepreneur and senior cloud applications test engineer in the space and defense sector, has mentored me in my entrepreneurial journey. He has shown me that consistency is more important than brilliance and taught me how to approach life with emotional control and positivity. From learning to read people to building deeper, more productive conversations, his mentorship has helped me grow into a resilient and thoughtful future entrepreneur.",
     linkedin: "https://www.linkedin.com/in/sabarishsethuraman/",
-    image: "attached_assets/Sabarish R Sethuraman.jpg"
+    image: "/attached_assets/Sabarish R Sethuraman.jpg"
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const mentors = [
     role: "Product UX Designer",
     impact: "Coming from a chemistry background, he ventured into startups and eventually found his place in product design. Rahul consistently challenges norms, pushes boundaries, and encourages others to think beyond the obvious. He has inspired me to stop limiting myself and start exploring the multiple dimensions of creativity, leadership, and personal potential.",
     linkedin: "https://www.linkedin.com/in/rmuth004/",
-    image: "attached_assets/Rahul Muthavarapu.jpeg"
+    image: "/attached_assets/Rahul Muthavarapu.jpeg"
   },
   {
     id: 4,
@@ -34,7 +34,7 @@ const mentors = [
     role: "Sr. Supply Chain Manager at Amazon",
     impact: "Dilip Kotturi, currently a Sr. Supply Chain Manager at Amazon, was my Senior Manager at Alexa Data Services. His story—from starting as a customer associate to rising to an L6 role in Seattle—is one of perseverance and continuous self-improvement. He taught me that not all days are productive, but every day can be a learning opportunity. His motto, 'If you know it, do it. If you don't, ask and learn,' has deeply shaped how I approach challenges in both work and life.",
     linkedin: "https://www.linkedin.com/in/kotturi-d-b45741151/",
-    image: "attached_assets/Dilip Kotturi.jpg"
+    image: "/attached_assets/Dilip Kotturi.jpg"
   }
 ];
 
