@@ -52,18 +52,20 @@ export default function Mentors() {
                 <motion.div
                   key={mentor.id}
                   whileHover={{ scale: 1.05 }}
-                  className="cursor-pointer"
+                  className="cursor-pointer flex flex-col items-center"
                   onClick={() => setSelectedMentor(mentor)}
                 >
-                  <div className="relative w-24 h-24 mx-auto mb-2">
+                  <div className="relative w-32 h-32 mb-4">
                     <img
                       src={mentor.image}
                       alt={mentor.name}
-                      className="rounded-full grayscale hover:grayscale-0 transition-all"
+                      className="w-full h-full object-cover rounded-full transition-all"
                     />
                   </div>
-                  <p className="text-center text-sm font-medium">{mentor.name}</p>
-                  <p className="text-center text-xs text-gray-600">{mentor.role}</p>
+                  <div className="text-center mt-2">
+                    <p className="text-base font-medium mb-1">{mentor.name}</p>
+                    <p className="text-sm text-gray-600 max-w-[200px]">{mentor.role}</p>
+                  </div>
                 </motion.div>
               ))}
             </div>
