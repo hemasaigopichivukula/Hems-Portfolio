@@ -32,27 +32,35 @@ export const experienceData = [
 export const projectsData = [
   {
     title: "AI Pitch Competition",
-    description: "Inter-university event with 10+ schools involved. Led organization and coordination efforts.",
-    link: "https://github.com/hemasai/ai-pitch-ucr",
+    description: "Launched UCR's first inter-university AI Pitch Competition, scaling from 40 to 135+ attendees. Secured Perplexity.ai sponsorship and managed all aspects of event execution.",
+    link: "https://drive.google.com/file/d/1ga1eV_BzVGUT5GArJtvGkZjyREWczbdJ/view?usp=drive_link",
     icon: "fa-brain",
     featured: true,
-    tags: ["AI", "Event Planning", "Leadership"]
+    tags: ["Event Management", "Leadership", "AI", "Marketing"]
   },
   {
-    title: "Amazon Control Tower",
-    description: "Centralized real-time monitoring system launch. Improved operational efficiency.",
-    link: "https://github.com/hemasai/amazon-control-tower",
-    icon: "fa-project-diagram",
-    featured: false,
-    tags: ["Project Management", "Monitoring", "Efficiency"]
+    title: "Amazon Control Tower (ADS)",
+    description: "Led implementation of centralized dashboard integrating 13 tools, improving delivery performance across 14+ programs and reducing monitoring effort by 60%.",
+    link: "https://drive.google.com/file/d/1qsHdzX33ThHGhdTiXCOtuVOyFGbL1E78/view?usp=drive_link",
+    icon: "fa-tower-observation",
+    featured: true,
+    tags: ["SQL", "Excel Macros", "Dashboard", "Process Optimization"]
   },
   {
-    title: "Break Adherence Dashboard",
-    description: "Improved SLA through smarter tracking. Developed analytics dashboard.",
-    link: "https://github.com/hemasai/break-adherence-dashboard",
-    icon: "fa-chart-pie",
+    title: "Break Adherence Intelligence System",
+    description: "Developed real-time QuickSight dashboard for break adherence tracking across 24/7 workforce, replacing manual reports and enabling proactive monitoring.",
+    link: "https://drive.google.com/file/d/1sIKltm0RZAziEE6FSct2_tws70zXqigs/view?usp=drive_link",
+    icon: "fa-chart-line",
     featured: false,
-    tags: ["Analytics", "Dashboard", "Process Improvement"]
+    tags: ["QuickSight", "SQL", "Analytics", "Automation"]
+  },
+  {
+    title: "Dynamic Shift Schedule Automation",
+    description: "Automated weekly shift scheduling for 4,300+ employees across four sites, creating a dynamic planning engine and centralized ticketing system.",
+    link: "https://drive.google.com/file/d/1d3KXQ_BMAOIhhVET7EXCW3XfxIXkwlnA/view?usp=drive_link",
+    icon: "fa-calendar-check",
+    featured: false,
+    tags: ["Excel VBA", "SQL", "Process Automation", "Workforce Planning"]
   }
 ];
 
