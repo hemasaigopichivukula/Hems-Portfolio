@@ -63,6 +63,15 @@ export default function ChatBot() {
       { text: category, isUser: true },
       { text: `Here are some common questions about ${category}:`, isUser: false }
     ]);
+    setTimeout(() => {
+      const scrollArea = document.querySelector('[data-radix-scroll-area-viewport]');
+      if (scrollArea) {
+        scrollArea.scrollTo({
+          top: scrollArea.scrollHeight,
+          behavior: 'smooth'
+        });
+      }
+    }, 100);
   };
 
   const handleQuestionClick = (question: string, answer: string) => {
@@ -156,9 +165,12 @@ export default function ChatBot() {
                                 setTimeout(() => {
                                   const scrollArea = document.querySelector('[data-radix-scroll-area-viewport]');
                                   if (scrollArea) {
-                                    scrollArea.scrollTop = scrollArea.scrollHeight;
+                                    scrollArea.scrollTo({
+                                      top: scrollArea.scrollHeight,
+                                      behavior: 'smooth'
+                                    });
                                   }
-                                }, 200);
+                                }, 100);
                               }}
                             >
                               {Q}
