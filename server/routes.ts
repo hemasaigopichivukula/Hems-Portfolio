@@ -2,7 +2,6 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import nodemailer from "nodemailer";
-import nodemailer from "nodemailer";
 
 type ContactFormData = {
   name: string;
@@ -35,21 +34,30 @@ export async function registerRoutes(app: Express): Promise<Server> {
         auth: {
           user: process.env.EMAIL_USER,
           pass: process.env.EMAIL_APP_PASSWORD
+        },
+        tls: {
+          rejectUnauthorized: false
         }
       });
 
       // Email options
       const mailOptions = {
         from: process.env.EMAIL_USER,
-        to: process.env.EMAIL_USER, // Send to yourself
+        to: process.env.EMAIL_USER,
         subject: `Portfolio Contact: ${subject || 'New Message'}`,
         text: `
 From: ${name}
 Email: ${email}
 Subject: ${subject}
 Message: ${message}
-        `
+        `,
+        headers: {
+          'priority': 'high'
+        }
       };
+
+      // Verify transporter
+      await transporter.verify();
 
       // Send email
       await transporter.sendMail(mailOptions);
