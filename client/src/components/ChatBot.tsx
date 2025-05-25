@@ -7,6 +7,7 @@ import { ScrollArea } from "./ui/scroll-area";
 interface Message {
   text: string;
   isUser: boolean;
+  showCategories?: boolean;
 }
 
 const categories = ["About Hema", "Skills & Approach", "How I Work", "Projects & Services", "Contact", "Other"];
@@ -47,7 +48,7 @@ export default function ChatBot() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedQuestion, setSelectedQuestion] = useState<string | null>(null);
 
-  const welcomeMessage = "👋 Hi there! I'm PP, Hema's assistant and I am here to help you learn more about Hema.";
+  const welcomeMessage = "👋 Hi there! I'm PP, Hema's assistant, and I'm here to help.\nPlease type your question or click the 💡 Option button below to explore categories.";
 
   useEffect(() => {
     if (open && messages.length === 0) {
@@ -192,6 +193,26 @@ export default function ChatBot() {
                     >
                       {message.text}
                       {!message.isUser && i === 0 && (
+                        <div className="mt-4">
+                          <Button
+                            variant="outline"
+                            className="w-full text-sm mb-2"
+                            onClick={() => {
+                              setMessages(prev => [...prev, {
+                                text: "Here are all available categories:",
+                                isUser: false
+                              }, {
+                                text: "Categories",
+                                isUser: false,
+                                showCategories: true
+                              }]);
+                            }}
+                          >
+                            💡 Options
+                          </Button>
+                        </div>
+                      )}
+                      {!message.isUser && message.showCategories && (
                         <div className="grid grid-cols-2 gap-2 mt-4">
                           {categories.map((category) => (
                             <Button
