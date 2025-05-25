@@ -145,13 +145,21 @@ export default function ChatBot() {
                         </div>
                       )}
                       {!message.isUser && selectedCategory && message.text.includes(selectedCategory) && (
-                        <div className="grid grid-cols-1 gap-2 mt-4">
+                        <div className="flex flex-col gap-2 mt-4">
                           {questionsAndAnswers[selectedCategory].map(({ Q, A }) => (
                             <Button
                               key={Q}
                               variant="outline"
-                              className="text-sm text-left"
-                              onClick={() => handleQuestionClick(Q, A)}
+                              className="text-sm text-left p-3 w-full bg-white hover:bg-gray-50 rounded-lg shadow-sm"
+                              onClick={() => {
+                                handleQuestionClick(Q, A);
+                                setTimeout(() => {
+                                  const scrollArea = document.querySelector('.scroll-area-viewport');
+                                  if (scrollArea) {
+                                    scrollArea.scrollTop = scrollArea.scrollHeight;
+                                  }
+                                }, 100);
+                              }}
                             >
                               {Q}
                             </Button>
