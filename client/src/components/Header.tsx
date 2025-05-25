@@ -12,8 +12,12 @@ export default function Header({ id }: { id?: string }) {
     >
       <div className="max-w-6xl mx-auto px-4" data-aos="fade-up">
         <div className="relative inline-block">
-          <div className="mx-auto rounded-full w-32 h-32 bg-blue-600 flex items-center justify-center text-white text-4xl font-bold border-4 border-white shadow-xl mb-6">
-            HS
+          <div className="mx-auto rounded-full w-32 h-32 overflow-hidden border-4 border-white shadow-xl mb-6">
+            <img 
+              src="/profile.png" 
+              alt="Hema Sai Gopi Chivukula" 
+              className="w-full h-full object-cover"
+            />
           </div>
           <div className="absolute bottom-6 right-0 bg-green-500 h-4 w-4 rounded-full border-2 border-white"></div>
         </div>
