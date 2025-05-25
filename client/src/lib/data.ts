@@ -66,7 +66,8 @@ export const projectsData = [
 
 export const technicalSkills = [
   { name: "Excel (Advanced + VBA)", level: "Advanced", percentage: 95 },
-  { name: "Operational Dashboards", level: "Advanced", percentage: 95 },
+  { name: "Monday.com", level: "Advanced", percentage: 95 },
+  { name: "Microsoft Office Suite", level: "Advanced", percentage: 95 },
   { name: "Google Workspace", level: "Advanced", percentage: 90 },
   { name: "Capacity & Forecast Modeling", level: "Advanced", percentage: 90 },
   { name: "SQL", level: "Intermediate", percentage: 80 },
