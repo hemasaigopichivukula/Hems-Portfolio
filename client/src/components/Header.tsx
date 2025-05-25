@@ -28,7 +28,7 @@ export default function Header({ id }: { id?: string }) {
             size="lg"
             className="bg-white text-blue-900 hover:bg-blue-50"
           >
-            <a href="/Hema Sai Gopi Chivukula.pdf" target="_blank">Resume</a>
+            <a href="https://drive.google.com/file/d/1YwCcQrIQ98HcpKX6Cla4G4wK2tr2sWid/view?usp=drive_link" target="_blank">Resume</a>
           </Button>
           <Button 
             asChild
