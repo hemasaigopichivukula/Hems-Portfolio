@@ -10,13 +10,29 @@ interface Message {
   isUser: boolean;
 }
 
-const categories = ["About Me", "Skills", "How I Work", "Projects", "Contact", "Other"];
+const categories = ["About Me", "Skills & Approach", "How I Work", "Projects & Services", "Contact", "Other"];
 
 const categoryResponses: Record<string, string[]> = {
-  "About Me": ["I'm Hema Sai Gopi Chivukula, a passionate software engineer with experience in full-stack development and AI/ML.", "Would you like to know more about my background or education?"],
-  "Skills": ["I specialize in React, TypeScript, Node.js, and Python.", "What specific skills would you like to know more about?"],
-  "How I Work": ["I follow agile methodologies and believe in clean, maintainable code.", "Would you like to know more about my development process?"],
-  "Projects": ["I've worked on various projects including AI-powered applications and web platforms.", "Which type of projects interest you?"],
+  "About Me": [
+    "I'm a strategic consultant and program manager. I help organizations improve operations, manage programs, and use data to make better decisions.",
+    "I've worked at Amazon, universities, and nonprofits—managing global programs and solving real-world challenges.",
+    "Would you like to know more about my background?"
+  ],
+  "Skills & Approach": [
+    "I specialize in project execution, stakeholder communication, process improvement, and data visualization.",
+    "I use tools like JIRA, Tableau, Power BI, Excel VBA, SQL, Monday.com, Microsoft Project, Notion, and Confluence.",
+    "I start by understanding the problem, align with goals, build a roadmap, and track progress through measurable outcomes."
+  ],
+  "How I Work": [
+    "I support both teams on strategy execution and work with individuals on process design or upskilling.",
+    "I'm flexible with remote work and open to relocation for the right opportunity.",
+    "I handle change by listening first, connecting changes to business outcomes, and making transitions easy to adopt."
+  ],
+  "Projects & Services": [
+    "Check out my Portfolio or Resume section to see my work.",
+    "I'm open to short-term consulting, strategic projects, or fractional leadership roles.",
+    "I have experience building dashboards that track KPIs, SLAs, and team performance in real-time."
+  ],
   "Contact": ["You can reach me through the contact form on this website.", "Would you like me to show you where it is?"],
   "Other": ["For any other inquiries, please use the contact form above.", "Is there something specific you'd like to know?"]
 };
