@@ -15,7 +15,7 @@ const mentors = [
   {
     id: 2,
     name: "Sabarish R Sethuraman",
-    role: "Senior Cloud Applications Test Engineer",
+    role: "Senior Cloud Applications Test Engineer & Entrepreneur",
     impact: "Sabarish R Sethuraman, an entrepreneur and senior cloud applications test engineer in the space and defense sector, has mentored me in my entrepreneurial journey. He has shown me that consistency is more important than brilliance and taught me how to approach life with emotional control and positivity. From learning to read people to building deeper, more productive conversations, his mentorship has helped me grow into a resilient and thoughtful future entrepreneur.",
     linkedin: "https://www.linkedin.com/in/sabarishsethuraman/",
     image: "/Sabarish R Sethuraman.jpg"
@@ -23,7 +23,7 @@ const mentors = [
   {
     id: 3,
     name: "Rahul Muthavarapu",
-    role: "Product UX Designer",
+    role: "Product Consultant",
     impact: "Coming from a chemistry background, he ventured into startups and eventually found his place in product design. Rahul consistently challenges norms, pushes boundaries, and encourages others to think beyond the obvious. He has inspired me to stop limiting myself and start exploring the multiple dimensions of creativity, leadership, and personal potential.",
     linkedin: "https://www.linkedin.com/in/rmuth004/",
     image: "/Rahul Muthavarapu.jpeg"
