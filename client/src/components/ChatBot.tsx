@@ -48,7 +48,7 @@ export default function ChatBot() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedQuestion, setSelectedQuestion] = useState<string | null>(null);
 
-  const welcomeMessage = "👋 Hi there! I'm here to help you learn more about me.\nChoose a category to get started:";
+  const welcomeMessage = "👋 Hi there! I'm PP, Hema's assistant and I am here to help you learn more about Hema.\nChoose a category to get started:";
 
   useEffect(() => {
     if (open && messages.length === 0) {
@@ -115,7 +115,7 @@ export default function ChatBot() {
     <>
       <div className="fixed bottom-4 right-4 flex flex-col items-end gap-2">
         <div className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm shadow-md animate-bounce">
-          Chat with me!
+          Hema's Assistant
         </div>
         <Button
           className="rounded-full w-14 h-14 p-0 shadow-lg bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 transition-all duration-300"
