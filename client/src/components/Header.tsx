@@ -14,9 +14,14 @@ export default function Header({ id }: { id?: string }) {
         <div className="relative inline-block">
           <div className="mx-auto rounded-full w-32 h-32 overflow-hidden border-4 border-white shadow-xl mb-6">
             <img 
-              src="/profile.png" 
+              src="profile.png" 
               alt="Hema Sai Gopi Chivukula" 
               className="w-full h-full object-cover"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.onerror = null;
+                target.src = "/profile.png";
+              }}
             />
           </div>
           <div className="absolute bottom-6 right-0 bg-green-500 h-4 w-4 rounded-full border-2 border-white"></div>
