@@ -8,7 +8,7 @@ export default function Header({ id }: { id?: string }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="relative text-center py-16 bg-gradient-to-r from-blue-800 to-blue-900 text-white shadow-lg"
+      className="relative text-center py-16 bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg"
     >
       <div className="max-w-6xl mx-auto px-4" data-aos="fade-up">
         <div className="relative inline-block">
