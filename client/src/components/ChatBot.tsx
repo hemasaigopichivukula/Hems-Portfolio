@@ -113,12 +113,17 @@ export default function ChatBot() {
 
   return (
     <>
-      <Button
-        className="fixed bottom-4 right-4 rounded-full w-12 h-12 p-0 shadow-lg"
-        onClick={() => setOpen(true)}
-      >
-        <i className="fas fa-comments"></i>
-      </Button>
+      <div className="fixed bottom-4 right-4 flex flex-col items-end gap-2">
+        <div className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm shadow-md animate-bounce">
+          Chat with me!
+        </div>
+        <Button
+          className="rounded-full w-14 h-14 p-0 shadow-lg bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 transition-all duration-300"
+          onClick={() => setOpen(true)}
+        >
+          <i className="fas fa-robot text-xl animate-pulse"></i>
+        </Button>
+      </div>
 
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="sm:max-w-[425px]">
