@@ -96,16 +96,26 @@ export default function ChatBot() {
 
     setTimeout(() => {
       // Check for casual greetings
-      const greetings = ['hi', 'hello', 'hey', 'howdy'];
+      const timeGreetings = ['good morning', 'good afternoon', 'good evening', 'good night'];
+      const casualGreetings = ['hi', 'hello', 'hey', 'howdy', 'hola', 'namaste'];
       const goodbyes = ['bye', 'goodbye', 'see you', 'cya'];
       const thanks = ['thank', 'thanks', 'appreciate'];
       
       const lowerInput = input.toLowerCase();
       
-      if (greetings.some(greeting => lowerInput.includes(greeting))) {
+      if (timeGreetings.some(greeting => lowerInput.includes(greeting))) {
+        const greeting = timeGreetings.find(g => lowerInput.includes(g));
         setMessages(prev => [...prev, {
-          text: "👋 Hello! I'm PP, Hema's assistant. I can tell you all about Hema's experience, skills, projects, and more. What would you like to know?",
-          isUser: false
+          text: `${greeting?.charAt(0).toUpperCase()}${greeting?.slice(1)}! 👋 I'm PP, Hema's assistant, and I'm here to help.\nPlease type your question or click the 💡 Option button below to explore categories.`,
+          isUser: false,
+          showCategories: true
+        }]);
+      } else if (casualGreetings.some(greeting => lowerInput.includes(greeting))) {
+        const greeting = casualGreetings.find(g => lowerInput.includes(g));
+        setMessages(prev => [...prev, {
+          text: `${greeting?.charAt(0).toUpperCase()}${greeting?.slice(1)}! 👋 I'm PP, Hema's assistant, and I'm here to help.\nPlease type your question or click the 💡 Option button below to explore categories.`,
+          isUser: false,
+          showCategories: true
         }]);
       } else if (goodbyes.some(bye => lowerInput.includes(bye))) {
         setMessages(prev => [...prev, {
