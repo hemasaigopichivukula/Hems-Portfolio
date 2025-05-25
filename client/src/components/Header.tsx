@@ -28,7 +28,7 @@ export default function Header({ id }: { id?: string }) {
             size="lg"
             className="bg-white text-blue-900 hover:bg-blue-50"
           >
-            <a href="/path-to-resume.pdf" target="_blank">Resume</a>
+            <a href="/Hema Sai Gopi Chivukula.pdf" target="_blank">Resume</a>
           </Button>
           <Button 
             asChild
@@ -44,12 +44,12 @@ export default function Header({ id }: { id?: string }) {
             size="lg"
             className="bg-white text-blue-900 hover:bg-blue-50"
           >
-            <a href="mailto:contact@hemasai.com">Email</a>
+            <a href="mailto:hchiv001@ucr.edu">Email</a>
           </Button>
         </div>
       </div>
 
-      
+
     </motion.header>
   );
 }
