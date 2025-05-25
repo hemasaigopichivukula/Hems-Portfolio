@@ -187,6 +187,10 @@ section {
   padding-top: 1rem;
 }
 
+section:not(:first-of-type) {
+  margin-top: 1rem;
+}
+
 /* Animation classes */
 .fade-up {
   opacity: 0;
