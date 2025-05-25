@@ -8,6 +8,7 @@ interface Message {
   text: string;
   isUser: boolean;
   showCategories?: boolean;
+  isGreeting?: boolean;
 }
 
 const categories = ["About Hema", "Skills & Approach", "How I Work", "Projects & Services", "Contact", "Other"];
@@ -108,14 +109,14 @@ export default function ChatBot() {
         setMessages(prev => [...prev, {
           text: `${greeting?.charAt(0).toUpperCase()}${greeting?.slice(1)}! 👋 I'm PP, Hema's assistant, and I'm here to help.\nPlease type your question or click the 💡 Option button below to explore categories.`,
           isUser: false,
-          showCategories: false
+          isGreeting: true
         }]);
       } else if (casualGreetings.some(greeting => lowerInput.includes(greeting))) {
         const greeting = casualGreetings.find(g => lowerInput.includes(g));
         setMessages(prev => [...prev, {
           text: `${greeting?.charAt(0).toUpperCase()}${greeting?.slice(1)}! 👋 I'm PP, Hema's assistant, and I'm here to help.\nPlease type your question or click the 💡 Option button below to explore categories.`,
           isUser: false,
-          showCategories: false
+          isGreeting: true
         }]);
       } else if (goodbyes.some(bye => lowerInput.includes(bye))) {
         setMessages(prev => [...prev, {
@@ -202,7 +203,7 @@ export default function ChatBot() {
                       }`}
                     >
                       {message.text}
-                      {!message.isUser && i === 0 && (
+                      {!message.isUser && (i === 0 || message.isGreeting) && (
                         <div className="mt-4">
                           <Button
                             variant="outline"
