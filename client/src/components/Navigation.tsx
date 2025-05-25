@@ -37,8 +37,14 @@ export default function Navigation() {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const navHeight = 80; // Approximate height of the navigation bar
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+        top: elementPosition - navHeight,
+        behavior: "smooth"
+      });
     }
+    setIsMobileMenuOpen(false);
   };
 
   return (
