@@ -28,6 +28,30 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(400).json({ message: "Missing required fields" });
       }
 
+      // Create Nodemailer transporter
+      const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_APP_PASSWORD
+        }
+      });
+
+      // Email options
+      const mailOptions = {
+        from: process.env.EMAIL_USER,
+        to: process.env.EMAIL_USER, // Send to yourself
+        subject: `Portfolio Contact: ${subject || 'New Message'}`,
+        text: `
+From: ${name}
+Email: ${email}
+Subject: ${subject}
+Message: ${message}
+        `
+      };
+
+      // Send email
+      await transporter.sendMail(mailOptions);
       console.log("Contact form submission:", { name, email, subject, message });
 
       return res.status(200).json({ 
