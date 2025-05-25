@@ -154,11 +154,11 @@ export default function ChatBot() {
                               onClick={() => {
                                 handleQuestionClick(Q, A);
                                 setTimeout(() => {
-                                  const scrollArea = document.querySelector('.scroll-area-viewport');
+                                  const scrollArea = document.querySelector('[data-radix-scroll-area-viewport]');
                                   if (scrollArea) {
                                     scrollArea.scrollTop = scrollArea.scrollHeight;
                                   }
-                                }, 100);
+                                }, 200);
                               }}
                             >
                               {Q}
