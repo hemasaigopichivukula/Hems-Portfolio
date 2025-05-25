@@ -108,14 +108,14 @@ export default function ChatBot() {
         setMessages(prev => [...prev, {
           text: `${greeting?.charAt(0).toUpperCase()}${greeting?.slice(1)}! 👋 I'm PP, Hema's assistant, and I'm here to help.\nPlease type your question or click the 💡 Option button below to explore categories.`,
           isUser: false,
-          showCategories: true
+          showCategories: false
         }]);
       } else if (casualGreetings.some(greeting => lowerInput.includes(greeting))) {
         const greeting = casualGreetings.find(g => lowerInput.includes(g));
         setMessages(prev => [...prev, {
           text: `${greeting?.charAt(0).toUpperCase()}${greeting?.slice(1)}! 👋 I'm PP, Hema's assistant, and I'm here to help.\nPlease type your question or click the 💡 Option button below to explore categories.`,
           isUser: false,
-          showCategories: true
+          showCategories: false
         }]);
       } else if (goodbyes.some(bye => lowerInput.includes(bye))) {
         setMessages(prev => [...prev, {
