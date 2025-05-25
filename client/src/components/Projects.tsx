@@ -14,7 +14,7 @@ export default function Projects() {
         </h2>
         <div className="w-20 h-1 bg-primary mb-10"></div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {projectsData.map((project, index) => (
             <motion.div
               className="group card-hover"
