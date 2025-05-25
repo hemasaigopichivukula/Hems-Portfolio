@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
-export default function Header() {
+export default function Header({ id }: { id?: string }) {
   return (
-    <motion.header 
+    <motion.header
+      id={id} 
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
