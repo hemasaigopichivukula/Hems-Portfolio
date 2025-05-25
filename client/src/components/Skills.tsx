@@ -39,7 +39,7 @@ export default function Skills() {
           </div>
 
           <div>
-            <h3 className="text-xl font-bold mb-6 text-gray-700">Soft Skills & Certifications</h3>
+            <h3 className="text-xl font-bold mb-6 text-gray-700">Certifications & Professional Skills</h3>
 
             <div className="grid grid-cols-2 gap-4">
               {softSkills.map((skill, index) => (
