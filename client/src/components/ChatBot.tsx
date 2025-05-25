@@ -107,6 +107,17 @@ export default function ChatBot() {
           isUser: false
         }]);
       }
+      
+      // Scroll to bottom after messages update
+      setTimeout(() => {
+        const scrollArea = document.querySelector('[data-radix-scroll-area-viewport]');
+        if (scrollArea) {
+          scrollArea.scrollTo({
+            top: scrollArea.scrollHeight,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
     }, 500);
   };
 
