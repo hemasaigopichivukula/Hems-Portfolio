@@ -48,7 +48,7 @@ export default function Navigation() {
   };
 
   return (
-    <nav id="navbar" className={`bg-blue-900/95 backdrop-blur-sm text-white ${scrolled ? 'py-2' : 'py-4'} px-6 fixed w-full top-0 z-50 shadow-md transition-all duration-300`}>
+    <nav id="navbar" className={`bg-blue-900/95 backdrop-blur-sm text-white ${scrolled ? 'py-2' : 'py-4'} px-6 sticky top-0 z-50 shadow-md transition-all duration-300`}>
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-wrap justify-between items-center">
           <button 
