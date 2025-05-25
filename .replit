@@ -42,8 +42,8 @@ mode = "sequential"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "npm install --legacy-peer-deps --prefer-offline"
+args = "npm install --prefer-offline"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "npm run dev -- --host 0.0.0.0 --force"
+args = "npm run dev -- --host 0.0.0.0"
