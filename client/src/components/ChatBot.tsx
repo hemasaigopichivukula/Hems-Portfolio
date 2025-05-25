@@ -96,14 +96,39 @@ export default function ChatBot() {
     );
 
     setTimeout(() => {
-      // Check for casual greetings
       const timeGreetings = ['good morning', 'good afternoon', 'good evening', 'good night'];
       const casualGreetings = ['hi', 'hello', 'hey', 'howdy', 'hola', 'namaste'];
       const goodbyes = ['bye', 'goodbye', 'see you', 'cya'];
       const thanks = ['thank', 'thanks', 'appreciate'];
-      
+
+      const extractName = (input: string): string | null => {
+        const words = input.split(' ');
+        // Check for "I am" or "I'm" patterns
+        const iAmIndex = words.findIndex(w => w.toLowerCase() === 'am' || w.toLowerCase() === "i'm");
+        if (iAmIndex !== -1 && words[iAmIndex + 1]) {
+          return words[iAmIndex + 1];
+        }
+        // Check for "my name is" pattern
+        const nameIsIndex = words.findIndex((w, i) => 
+          w.toLowerCase() === 'name' && 
+          words[i + 1]?.toLowerCase() === 'is' &&
+          words[i + 2]
+        );
+        if (nameIsIndex !== -1) {
+          return words[nameIsIndex + 2];
+        }
+        // If single word that's not a greeting, assume it's a name
+        if (words.length === 1 && 
+            !timeGreetings.some(g => words[0].toLowerCase().includes(g)) &&
+            !casualGreetings.some(g => words[0].toLowerCase().includes(g))) {
+          return words[0];
+        }
+        return null;
+      };
+
       const lowerInput = input.toLowerCase();
-      
+      const name = extractName(input);
+
       if (timeGreetings.some(greeting => lowerInput.includes(greeting))) {
         const greeting = timeGreetings.find(g => lowerInput.includes(g));
         setMessages(prev => [...prev, {
@@ -113,8 +138,14 @@ export default function ChatBot() {
         }]);
       } else if (casualGreetings.some(greeting => lowerInput.includes(greeting))) {
         const greeting = casualGreetings.find(g => lowerInput.includes(g));
+        let response = `${greeting?.charAt(0).toUpperCase()}${greeting?.slice(1)}! `;
+        if (name) {
+          response += `Hi ${name}, `;
+        }
+        response += `👋 I'm PP, Hema's assistant, and I'm here to help.\nPlease type your question or click the 💡 Option button below to explore categories.`;
+
         setMessages(prev => [...prev, {
-          text: `${greeting?.charAt(0).toUpperCase()}${greeting?.slice(1)}! 👋 I'm PP, Hema's assistant, and I'm here to help.\nPlease type your question or click the 💡 Option button below to explore categories.`,
+          text: response,
           isUser: false,
           isGreeting: true
         }]);
@@ -141,7 +172,7 @@ export default function ChatBot() {
           isUser: false
         }]);
       }
-      
+
       // Scroll to bottom after messages update
       setTimeout(() => {
         const scrollArea = document.querySelector('[data-radix-scroll-area-viewport]');
