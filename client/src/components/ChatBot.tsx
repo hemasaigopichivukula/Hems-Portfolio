@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { Dialog, DialogContent } from "./ui/dialog";
 import { Input } from "./ui/input";
@@ -10,12 +10,29 @@ interface Message {
   isUser: boolean;
 }
 
+const categories = ["About Me", "Skills", "How I Work", "Projects", "Contact", "Other"];
+
+const categoryResponses: Record<string, string[]> = {
+  "About Me": ["I'm a software engineer with experience in full-stack development and AI/ML.", "Would you like to know more about my background or education?"],
+  "Skills": ["I specialize in React, TypeScript, Node.js, and Python.", "What specific skills would you like to know more about?"],
+  "How I Work": ["I follow agile methodologies and believe in clean, maintainable code.", "Would you like to know more about my development process?"],
+  "Projects": ["I've worked on various projects including AI-powered applications and web platforms.", "Which type of projects interest you?"],
+  "Contact": ["You can reach me through the contact form on this website.", "Would you like me to show you where it is?"],
+  "Other": ["For any other inquiries, please use the contact form above.", "Is there something specific you'd like to know?"]
+};
+
 export default function ChatBot() {
   const [open, setOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([
-    { text: "Hi! How can I help you today?", isUser: false }
-  ]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
+
+  const welcomeMessage = `👋 Hi there! I'm here to help you learn more about me.\nChoose a category to get started:\n\n${categories.join("\n")}`;
+
+  useEffect(() => {
+    if (open && messages.length === 0) {
+      setMessages([{ text: welcomeMessage, isUser: false }]);
+    }
+  }, [open]);
 
   const handleSend = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,13 +42,21 @@ export default function ChatBot() {
     setMessages(prev => [...prev, userMessage]);
     setInput("");
 
-    // Simulate bot response (replace with actual API call)
+    const category = categories.find(cat => 
+      input.toLowerCase().includes(cat.toLowerCase())
+    );
+
     setTimeout(() => {
-      setMessages(prev => [...prev, {
-        text: "Thanks for your message! This is a demo response.",
-        isUser: false
-      }]);
-    }, 1000);
+      if (category) {
+        const responses = categoryResponses[category];
+        setMessages(prev => [...prev, { text: responses.join("\n"), isUser: false }]);
+      } else {
+        setMessages(prev => [...prev, {
+          text: "I'm not sure what you mean. Please choose from one of these categories:\n\n" + categories.join("\n"),
+          isUser: false
+        }]);
+      }
+    }, 500);
   };
 
   return (
@@ -55,7 +80,7 @@ export default function ChatBot() {
                     className={`flex ${message.isUser ? 'justify-end' : 'justify-start'}`}
                   >
                     <div
-                      className={`rounded-lg px-4 py-2 max-w-[80%] ${
+                      className={`rounded-lg px-4 py-2 max-w-[80%] whitespace-pre-line ${
                         message.isUser
                           ? 'bg-primary text-primary-foreground'
                           : 'bg-muted'
@@ -71,7 +96,7 @@ export default function ChatBot() {
               <Input
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Type your message..."
+                placeholder="Type a category..."
                 className="flex-1"
               />
               <Button type="submit">Send</Button>
