@@ -5,6 +5,18 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 const galleryItems = [
   {
     type: "image",
+    url: "/attached_assets/Product Club Award.jpg",
+    title: "Product Club Award",
+    description: "Entire Product Club team celebrating the Collaboration of the Year Award"
+  },
+  {
+    type: "image",
+    url: "/attached_assets/Collaboration of the year Award.jpg",
+    title: "Collaboration of the Year Award",
+    description: "As President of Product Club, received awards on behalf of the club"
+  },
+  {
+    type: "image",
     url: "/attached_assets/Team 2024-2025.HEIC", 
     title: "UCR Product Club Team 2024-2025",
     description: "Leading innovation and product development initiatives at UCR"
