@@ -120,7 +120,10 @@ export default function ChatBot() {
           className="rounded-full w-14 h-14 p-0 shadow-lg bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 transition-all duration-300"
           onClick={() => setOpen(true)}
         >
-          <i className="fas fa-robot text-xl animate-pulse"></i>
+          <div className="flex items-center justify-center gap-1">
+            <i className="fas fa-robot text-xl"></i>
+            <i className="fas fa-hand-paper text-lg animate-wave"></i>
+          </div>
         </Button>
       </div>
 
