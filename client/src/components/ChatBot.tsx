@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { Dialog, DialogContent } from "./ui/dialog";
@@ -10,10 +9,10 @@ interface Message {
   isUser: boolean;
 }
 
-const categories = ["About Me", "Skills & Approach", "How I Work", "Projects & Services", "Contact", "Other"];
+const categories = ["About Hema", "Skills & Approach", "How I Work", "Projects & Services", "Contact", "Other"];
 
 const questionsAndAnswers: Record<string, { Q: string; A: string }[]> = {
-  "About Me": [
+  "About Hema": [
     { Q: "What do you do?", A: "I'm a strategic consultant and program manager. I help organizations improve operations, manage programs, and use data to make better decisions." },
     { Q: "What kind of background do you have?", A: "I've worked at Amazon, universities, and nonprofits—managing global programs and solving real-world challenges." },
     { Q: "What industries have you worked in?", A: "Mainly tech, education, and nonprofit sectors. I'm industry-flexible with a focus on solving execution-related problems." }
@@ -48,7 +47,7 @@ export default function ChatBot() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedQuestion, setSelectedQuestion] = useState<string | null>(null);
 
-  const welcomeMessage = "👋 Hi there! I'm PP, Hema's assistant and I am here to help you learn more about Hema.\nChoose a category to get started:";
+  const welcomeMessage = "👋 Hi there! I'm PP, Hema's assistant and I am here to help you learn more about Hema.";
 
   useEffect(() => {
     if (open && messages.length === 0) {
