@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Card, CardContent } from "./ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
@@ -5,33 +6,33 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 const galleryItems = [
   {
     type: "image",
-    url: "/attached_assets/Product Club Award.jpg",
-    title: "Product Club Award",
-    description: "Entire Product Club team celebrating the Collaboration of the Year Award"
+    url: "/Product Club Award.jpg",
+    title: "Product Club Achievement",
+    description: "Leading UCR's Product Club to win the prestigious Collaboration of the Year Award, fostering innovation and teamwork"
   },
   {
     type: "image",
-    url: "/attached_assets/Collaboration of the year Award.jpg",
-    title: "Collaboration of the Year Award",
-    description: "As President of Product Club, received awards on behalf of the club"
+    url: "/Collaboration of the year Award.jpg",
+    title: "Leadership Excellence",
+    description: "Honored to receive the Collaboration of the Year Award as President of Product Club, recognizing our team's outstanding achievements"
   },
   {
     type: "image",
-    url: "/attached_assets/Team 2024-2025.HEIC", 
-    title: "UCR Product Club Team 2024-2025",
-    description: "Leading innovation and product development initiatives at UCR"
+    url: "/Team 2024-2025.HEIC", 
+    title: "Product Club Leadership Team",
+    description: "Guiding UCR's next generation of product innovators as President for 2024-2025"
   },
   {
     type: "image",
-    url: "/attached_assets/AI Pitch 2025.jpg", 
-    title: "AI Pitch Competition 2025",
-    description: "Successfully presented innovative AI solutions at UCR's annual competition"
+    url: "/AI Pitch 2025.jpg", 
+    title: "AI Innovation Champion",
+    description: "Presenting cutting-edge AI solutions at UCR's annual pitch competition, showcasing technical excellence"
   },
   {
     type: "image",
-    url: "/attached_assets/Best Analyst- Amazon.jpg",
-    title: "Best Analyst Award at Amazon",
-    description: "Recognized for exceptional analytical performance and strategic impact"
+    url: "/Best Analyst- Amazon.jpg",
+    title: "Amazon Excellence Award",
+    description: "Recognized as Best Analyst at Amazon for delivering exceptional analytical insights and strategic impact"
   }
 ];
 
