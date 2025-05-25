@@ -21,8 +21,30 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(400).json({ message: "Missing required fields" });
       }
 
-      // In a real implementation, you would send an email here
-      // This is a mock implementation for the portfolio site
+      // Create Nodemailer transporter
+      const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_APP_PASSWORD
+        }
+      });
+
+      // Email options
+      const mailOptions = {
+        from: process.env.EMAIL_USER,
+        to: 'hchiv001@ucr.edu', // Your email where you want to receive notifications
+        subject: `Portfolio Contact: ${subject || 'New Message'}`,
+        text: `
+Name: ${name}
+Email: ${email}
+Subject: ${subject}
+Message: ${message}
+        `
+      };
+
+      // Send email
+      await transporter.sendMail(mailOptions);
       console.log("Contact form submission:", { name, email, subject, message });
 
       // Return a success response
