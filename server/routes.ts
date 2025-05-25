@@ -30,37 +30,33 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       // Create Nodemailer transporter
       const transporter = nodemailer.createTransport({
-        service: 'gmail',
+        host: 'smtp.gmail.com',
+        port: 587,
+        secure: false,
         auth: {
           user: process.env.EMAIL_USER,
           pass: process.env.EMAIL_APP_PASSWORD
         },
-        tls: {
-          rejectUnauthorized: false
-        }
+        debug: true,
+        logger: true
       });
 
       // Email options
       const mailOptions = {
-        from: process.env.EMAIL_USER,
+        from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
         to: process.env.EMAIL_USER,
         subject: `Portfolio Contact: ${subject || 'New Message'}`,
-        text: `
-From: ${name}
-Email: ${email}
-Subject: ${subject}
-Message: ${message}
-        `,
-        headers: {
-          'priority': 'high'
-        }
+        text: `From: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`,
       };
 
-      // Verify transporter
-      await transporter.verify();
-
-      // Send email
-      await transporter.sendMail(mailOptions);
+      try {
+        // Send email
+        const info = await transporter.sendMail(mailOptions);
+        console.log('Message sent: %s', info.messageId);
+      } catch (error) {
+        console.error('Error sending email:', error);
+        throw error;
+      }
       console.log("Contact form submission:", { name, email, subject, message });
 
       return res.status(200).json({ 
