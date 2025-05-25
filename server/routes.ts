@@ -10,7 +10,36 @@ type ContactFormData = {
   message: string;
 };
 
+type ContactFormData = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
+
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Handle contact form submissions
+  app.post("/api/contact", async (req, res) => {
+    try {
+      const { name, email, subject, message } = req.body as ContactFormData;
+      
+      // Validate the request body
+      if (!name || !email || !message) {
+        return res.status(400).json({ message: "Missing required fields" });
+      }
+
+      console.log("Contact form submission:", { name, email, subject, message });
+
+      return res.status(200).json({ 
+        message: "Message received successfully! We'll be in touch soon." 
+      });
+    } catch (error) {
+      console.error("Error processing contact form:", error);
+      return res.status(500).json({ 
+        message: "There was an error processing your request. Please try again later." 
+      });
+    }
+  });
   // Handle contact form submissions
   app.post("/api/contact", async (req, res) => {
     try {
