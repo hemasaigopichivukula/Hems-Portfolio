@@ -28,17 +28,18 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(400).json({ message: "Missing required fields" });
       }
 
+      if (!process.env.EMAIL_USER || !process.env.EMAIL_APP_PASSWORD) {
+        console.error('Missing email credentials in environment variables');
+        return res.status(500).json({ message: 'Email configuration error' });
+      }
+
       // Create Nodemailer transporter
       const transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
-        port: 587,
-        secure: false,
+        service: 'gmail',
         auth: {
           user: process.env.EMAIL_USER,
           pass: process.env.EMAIL_APP_PASSWORD
-        },
-        debug: true,
-        logger: true
+        }
       });
 
       // Email options
