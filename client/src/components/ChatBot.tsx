@@ -13,7 +13,7 @@ interface Message {
 const categories = ["About Me", "Skills", "How I Work", "Projects", "Contact", "Other"];
 
 const categoryResponses: Record<string, string[]> = {
-  "About Me": ["I'm a software engineer with experience in full-stack development and AI/ML.", "Would you like to know more about my background or education?"],
+  "About Me": ["I'm Hema Sai Gopi Chivukula, a passionate software engineer with experience in full-stack development and AI/ML.", "Would you like to know more about my background or education?"],
   "Skills": ["I specialize in React, TypeScript, Node.js, and Python.", "What specific skills would you like to know more about?"],
   "How I Work": ["I follow agile methodologies and believe in clean, maintainable code.", "Would you like to know more about my development process?"],
   "Projects": ["I've worked on various projects including AI-powered applications and web platforms.", "Which type of projects interest you?"],
@@ -114,7 +114,6 @@ export default function ChatBot() {
                     </div>
                   </div>
                 ))}
-                  )}
               </div>
             </ScrollArea>
             <form onSubmit={handleSend} className="mt-4 flex gap-2">
