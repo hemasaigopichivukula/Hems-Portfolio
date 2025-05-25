@@ -35,11 +35,22 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       // Create Nodemailer transporter
       const transporter = nodemailer.createTransport({
-        service: 'gmail',
+        host: 'smtp.gmail.com',
+        port: 587,
+        secure: false,
         auth: {
           user: process.env.EMAIL_USER,
           pass: process.env.EMAIL_APP_PASSWORD
+        },
+        tls: {
+          rejectUnauthorized: false
         }
+      });
+
+      // Verify SMTP connection
+      await transporter.verify().catch(error => {
+        console.error('SMTP verification failed:', error);
+        throw new Error('Failed to establish SMTP connection');
       });
 
       // Email options

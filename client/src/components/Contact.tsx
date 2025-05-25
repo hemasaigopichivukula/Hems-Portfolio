@@ -75,7 +75,7 @@ export default function Contact() {
               <p className="mb-6">Feel free to reach out with opportunities, questions, or just to say hello!</p>
 
               <div className="space-y-4">
-                <a href="mailto:hchiv001@ucr.edu" className="flex items-start space-x-3 hover:text-primary transition-colors">
+                <a href="mailto:hchiv001@ucr.edu" target="_blank" rel="noopener noreferrer" className="flex items-start space-x-3 hover:text-primary transition-colors">
                   <div className="bg-blue-100 text-primary p-2 rounded-full">
                     <i className="fas fa-envelope"></i>
                   </div>
