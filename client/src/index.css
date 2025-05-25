@@ -2,6 +2,99 @@
 @tailwind components;
 @tailwind utilities;
 
+.robot-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.robot {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.head {
+  position: absolute;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 4px;
+  left: 4px;
+}
+
+.eyes {
+  position: absolute;
+  width: 8px;
+  height: 2px;
+  background: #0066ff;
+  top: 6px;
+  left: 4px;
+  border-radius: 1px;
+}
+
+.antenna {
+  position: absolute;
+  width: 2px;
+  height: 4px;
+  background: white;
+  top: -4px;
+  left: 7px;
+}
+
+.body {
+  position: absolute;
+  top: 16px;
+  width: 12px;
+  height: 8px;
+  background: white;
+  left: 6px;
+  border-radius: 2px;
+}
+
+.arm {
+  position: absolute;
+  width: 6px;
+  height: 2px;
+  background: white;
+  top: 2px;
+}
+
+.left-arm {
+  left: -6px;
+}
+
+.right-arm {
+  right: -6px;
+  transform-origin: 0 50%;
+}
+
+.legs {
+  position: absolute;
+  top: 24px;
+  width: 12px;
+  height: 4px;
+  left: 6px;
+}
+
+.leg {
+  position: absolute;
+  width: 2px;
+  height: 4px;
+  background: white;
+}
+
+.left-leg {
+  left: 2px;
+}
+
+.right-leg {
+  right: 2px;
+}
+
 @keyframes wave {
   0% { transform: rotate(0deg); }
   20% { transform: rotate(-20deg); }
@@ -13,8 +106,7 @@
 
 .animate-wave {
   animation: wave 1.5s infinite;
-  transform-origin: 70% 70%;
-  display: inline-block;
+  transform-origin: 0 50%;
 }
 
 :root {
