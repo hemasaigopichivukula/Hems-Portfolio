@@ -136,12 +136,20 @@ export default function ChatBot() {
           isUser: false,
           isGreeting: true
         }]);
-      } else if (casualGreetings.some(greeting => lowerInput.includes(greeting))) {
+      } else if (casualGreetings.some(greeting => lowerInput.includes(greeting)) || name) {
+        let response = "";
         const greeting = casualGreetings.find(g => lowerInput.includes(g));
-        let response = `${greeting?.charAt(0).toUpperCase()}${greeting?.slice(1)}! `;
-        if (name) {
-          response += `Hi ${name}, `;
+        
+        if (greeting) {
+          response = `${greeting.charAt(0).toUpperCase()}${greeting.slice(1)}! `;
         }
+        
+        if (name) {
+          response += `Hi ${name}! `;
+        } else {
+          response += "Hi! ";
+        }
+        
         response += `👋 I'm PP, Hema's assistant, and I'm here to help.\nPlease type your question or click the 💡 Option button below to explore categories.`;
 
         setMessages(prev => [...prev, {
