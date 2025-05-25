@@ -26,7 +26,7 @@ export default function ChatBot() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
 
-  const welcomeMessage = `👋 Hi there! I'm here to help you learn more about me.\nChoose a category to get started:\n\n${categories.join("\n")}`;
+  const welcomeMessage = "👋 Hi there! I'm here to help you learn more about me.\nChoose a category to get started:";
 
   useEffect(() => {
     if (open && messages.length === 0) {
@@ -59,6 +59,16 @@ export default function ChatBot() {
     }, 500);
   };
 
+  const handleCategoryClick = (category: string) => {
+    const userMessage = { text: category, isUser: true };
+    setMessages(prev => [...prev, userMessage]);
+    
+    setTimeout(() => {
+      const responses = categoryResponses[category];
+      setMessages(prev => [...prev, { text: responses.join("\n"), isUser: false }]);
+    }, 500);
+  };
+
   return (
     <>
       <Button
@@ -87,9 +97,24 @@ export default function ChatBot() {
                       }`}
                     >
                       {message.text}
+                      {!message.isUser && i === 0 && (
+                        <div className="grid grid-cols-2 gap-2 mt-4">
+                          {categories.map((category) => (
+                            <Button
+                              key={category}
+                              variant="outline"
+                              className="text-sm"
+                              onClick={() => handleCategoryClick(category)}
+                            >
+                              {category}
+                            </Button>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   </div>
                 ))}
+                  ))}
               </div>
             </ScrollArea>
             <form onSubmit={handleSend} className="mt-4 flex gap-2">
