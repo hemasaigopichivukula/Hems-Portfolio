@@ -1,3 +1,4 @@
+
 export const experienceData = [
   {
     title: "Executive Intern",
@@ -84,5 +85,4 @@ export const softSkills = [
   { name: "Cross-Functional Collaboration", icon: "fa-handshake" },
   { name: "Data-Driven Decision Making", icon: "fa-chart-line" },
   { name: "Process Improvement", icon: "fa-arrow-trend-up" }
-];ks" }
 ];
