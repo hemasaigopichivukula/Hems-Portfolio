@@ -18,13 +18,13 @@ const galleryItems = [
   },
   {
     type: "image",
-    url: "/Team 2024-2025.HEIC", 
+    url: "/Team 2024-2025.HEIC",
     title: "Product Club Leadership Team",
     description: "Guiding UCR's next generation of product innovators as President for 2024-2025"
   },
   {
     type: "image",
-    url: "/AI Pitch 2025.jpg", 
+    url: "/AI Pitch 2025.jpg",
     title: "AI Innovation Champion",
     description: "Presenting cutting-edge AI solutions at UCR's annual pitch competition, showcasing technical excellence"
   },
@@ -53,12 +53,19 @@ export default function Gallery() {
                 >
                   <Card className="overflow-hidden">
                     <CardContent className="p-0">
-                      <img 
-                        src={item.url} 
-                        alt={item.title}
-                        className="w-full h-[600px] object-contain bg-white rounded-lg shadow-lg"
-                      />
-                      <div className="p-6 bg-white/95 absolute bottom-0 w-full backdrop-blur-sm rounded-b-lg">
+                      <div className="relative w-full h-[600px]">
+                        <img 
+                          src={item.url} 
+                          alt={item.title}
+                          className="w-full h-full object-contain bg-white"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.src = '/placeholder.jpg';
+                            console.error(`Failed to load image: ${item.url}`);
+                          }}
+                        />
+                      </div>
+                      <div className="p-6 bg-white/95 w-full backdrop-blur-sm">
                         <h3 className="font-semibold text-xl mb-2">{item.title}</h3>
                         <p className="text-gray-600">{item.description}</p>
                       </div>
