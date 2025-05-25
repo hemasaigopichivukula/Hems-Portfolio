@@ -15,7 +15,7 @@ export default function Footer() {
             <a href="https://github.com/hemasai" target="_blank" className="bg-white/10 hover:bg-white/20 p-3 rounded-full transition">
               <i className="fab fa-github"></i>
             </a>
-            <a href="mailto:contact@hemasai.com" className="bg-white/10 hover:bg-white/20 p-3 rounded-full transition">
+            <a href="mailto:hchiv001@ucr.edu" className="bg-white/10 hover:bg-white/20 p-3 rounded-full transition">
               <i className="fas fa-envelope"></i>
             </a>
           </div>
