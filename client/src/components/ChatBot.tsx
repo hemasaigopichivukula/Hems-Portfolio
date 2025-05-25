@@ -217,6 +217,15 @@ export default function ChatBot() {
                                 isUser: false,
                                 showCategories: true
                               }]);
+                              setTimeout(() => {
+                                const scrollArea = document.querySelector('[data-radix-scroll-area-viewport]');
+                                if (scrollArea) {
+                                  scrollArea.scrollTo({
+                                    top: scrollArea.scrollHeight,
+                                    behavior: 'smooth'
+                                  });
+                                }
+                              }, 100);
                             }}
                           >
                             💡 Options
