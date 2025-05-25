@@ -12,35 +12,41 @@ interface Message {
 
 const categories = ["About Me", "Skills & Approach", "How I Work", "Projects & Services", "Contact", "Other"];
 
-const categoryResponses: Record<string, string[]> = {
+const questionsAndAnswers: Record<string, { Q: string; A: string }[]> = {
   "About Me": [
-    "I'm a strategic consultant and program manager. I help organizations improve operations, manage programs, and use data to make better decisions.",
-    "I've worked at Amazon, universities, and nonprofits—managing global programs and solving real-world challenges.",
-    "Would you like to know more about my background?"
+    { Q: "What do you do?", A: "I'm a strategic consultant and program manager. I help organizations improve operations, manage programs, and use data to make better decisions." },
+    { Q: "What kind of background do you have?", A: "I've worked at Amazon, universities, and nonprofits—managing global programs and solving real-world challenges." },
+    { Q: "What industries have you worked in?", A: "Mainly tech, education, and nonprofit sectors. I'm industry-flexible with a focus on solving execution-related problems." }
   ],
   "Skills & Approach": [
-    "I specialize in project execution, stakeholder communication, process improvement, and data visualization.",
-    "I use tools like JIRA, Tableau, Power BI, Excel VBA, SQL, Monday.com, Microsoft Project, Notion, and Confluence.",
-    "I start by understanding the problem, align with goals, build a roadmap, and track progress through measurable outcomes."
+    { Q: "What are you good at?", A: "Project execution, stakeholder communication, process improvement, and data visualization." },
+    { Q: "What tools do you use?", A: "JIRA, Tableau, Power BI, Excel VBA, SQL, Monday.com, Microsoft Project, Notion, and Confluence." },
+    { Q: "How do you approach projects?", A: "I start by understanding the problem, align with goals, build a roadmap, and track progress through measurable outcomes." }
   ],
   "How I Work": [
-    "I support both teams on strategy execution and work with individuals on process design or upskilling.",
-    "I'm flexible with remote work and open to relocation for the right opportunity.",
-    "I handle change by listening first, connecting changes to business outcomes, and making transitions easy to adopt."
+    { Q: "Do you work with teams or individuals?", A: "Both! I support teams on strategy execution and work with individuals on process design or upskilling." },
+    { Q: "Are you open to remote or in-person roles?", A: "Yes, I'm flexible. I work remotely and am open to relocation for the right opportunity." },
+    { Q: "How do you handle resistance to change?", A: "By listening first. I connect changes to business outcomes and make transitions easy to adopt." }
   ],
   "Projects & Services": [
-    "Check out my Portfolio or Resume section to see my work.",
-    "I'm open to short-term consulting, strategic projects, or fractional leadership roles.",
-    "I have experience building dashboards that track KPIs, SLAs, and team performance in real-time."
+    { Q: "Can I see your work?", A: "Yes! Check out the Portfolio or Resume section on this site." },
+    { Q: "Do you do freelance consulting?", A: "Yes, I'm open to short-term consulting, strategic projects, or fractional leadership roles." },
+    { Q: "Can you help with dashboards or reporting?", A: "Absolutely. I've built dashboards that track KPIs, SLAs, and team performance in real-time." }
   ],
-  "Contact": ["You can reach me through the contact form on this website.", "Would you like me to show you where it is?"],
-  "Other": ["For any other inquiries, please use the contact form above.", "Is there something specific you'd like to know?"]
+  "Contact": [
+    { Q: "How can I contact you?", A: "Email me at hchiv001@ucr.edu or use the Contact Me section on this site." }
+  ],
+  "Other": [
+    { Q: "Not seeing what you need?", A: "Just send me a quick message using the Contact Me form. I'll get back to you soon" }
+  ]
 };
 
 export default function ChatBot() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [selectedQuestion, setSelectedQuestion] = useState<string | null>(null);
 
   const welcomeMessage = "👋 Hi there! I'm here to help you learn more about me.\nChoose a category to get started:";
 
@@ -50,7 +56,24 @@ export default function ChatBot() {
     }
   }, [open]);
 
-  const handleSend = async (e: React.FormEvent) => {
+  const handleCategoryClick = (category: string) => {
+    setSelectedCategory(category);
+    setSelectedQuestion(null);
+    setMessages(prev => [...prev,
+      { text: category, isUser: true },
+      { text: `Here are some common questions about ${category}:`, isUser: false }
+    ]);
+  };
+
+  const handleQuestionClick = (question: string, answer: string) => {
+    setSelectedQuestion(question);
+    setMessages(prev => [...prev,
+      { text: question, isUser: true },
+      { text: answer, isUser: false }
+    ]);
+  };
+
+  const handleSend = (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim()) return;
 
@@ -64,24 +87,18 @@ export default function ChatBot() {
 
     setTimeout(() => {
       if (category) {
-        const responses = categoryResponses[category];
-        setMessages(prev => [...prev, { text: responses.join("\n"), isUser: false }]);
+        setSelectedCategory(category);
+        setSelectedQuestion(null);
+        setMessages(prev => [...prev, {
+          text: `Here are some common questions about ${category}:`,
+          isUser: false
+        }]);
       } else {
         setMessages(prev => [...prev, {
           text: "I'm not sure what you mean. Please choose from one of these categories:\n\n" + categories.join("\n"),
           isUser: false
         }]);
       }
-    }, 500);
-  };
-
-  const handleCategoryClick = (category: string) => {
-    const userMessage = { text: category, isUser: true };
-    setMessages(prev => [...prev, userMessage]);
-    
-    setTimeout(() => {
-      const responses = categoryResponses[category];
-      setMessages(prev => [...prev, { text: responses.join("\n"), isUser: false }]);
     }, 500);
   };
 
@@ -123,6 +140,20 @@ export default function ChatBot() {
                               onClick={() => handleCategoryClick(category)}
                             >
                               {category}
+                            </Button>
+                          ))}
+                        </div>
+                      )}
+                      {!message.isUser && selectedCategory && message.text.includes(selectedCategory) && (
+                        <div className="grid grid-cols-1 gap-2 mt-4">
+                          {questionsAndAnswers[selectedCategory].map(({ Q, A }) => (
+                            <Button
+                              key={Q}
+                              variant="outline"
+                              className="text-sm text-left"
+                              onClick={() => handleQuestionClick(Q, A)}
+                            >
+                              {Q}
                             </Button>
                           ))}
                         </div>
