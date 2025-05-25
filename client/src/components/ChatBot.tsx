@@ -94,7 +94,29 @@ export default function ChatBot() {
     );
 
     setTimeout(() => {
-      if (category) {
+      // Check for casual greetings
+      const greetings = ['hi', 'hello', 'hey', 'howdy'];
+      const goodbyes = ['bye', 'goodbye', 'see you', 'cya'];
+      const thanks = ['thank', 'thanks', 'appreciate'];
+      
+      const lowerInput = input.toLowerCase();
+      
+      if (greetings.some(greeting => lowerInput.includes(greeting))) {
+        setMessages(prev => [...prev, {
+          text: "👋 Hello! I'm PP, Hema's assistant. I can tell you all about Hema's experience, skills, projects, and more. What would you like to know?",
+          isUser: false
+        }]);
+      } else if (goodbyes.some(bye => lowerInput.includes(bye))) {
+        setMessages(prev => [...prev, {
+          text: "Goodbye! Feel free to come back if you have more questions about Hema!",
+          isUser: false
+        }]);
+      } else if (thanks.some(thank => lowerInput.includes(thank))) {
+        setMessages(prev => [...prev, {
+          text: "You're welcome! I'm happy to help you learn more about Hema.",
+          isUser: false
+        }]);
+      } else if (category) {
         setSelectedCategory(category);
         setSelectedQuestion(null);
         setMessages(prev => [...prev, {
@@ -103,7 +125,7 @@ export default function ChatBot() {
         }]);
       } else {
         setMessages(prev => [...prev, {
-          text: "I'm not sure what you mean. Please choose from one of these categories:\n\n" + categories.join("\n"),
+          text: "I'm focused on helping you learn about Hema. Please choose from one of these categories to get specific information:\n\n" + categories.join("\n"),
           isUser: false
         }]);
       }
