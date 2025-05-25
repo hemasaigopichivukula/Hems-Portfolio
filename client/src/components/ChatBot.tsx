@@ -178,6 +178,19 @@ export default function ChatBot() {
                           ))}
                         </div>
                       )}
+                      {selectedQuestion && (
+                        <Button
+                          variant="outline"
+                          className="mt-4 w-full text-sm"
+                          onClick={() => {
+                            setSelectedCategory(null);
+                            setSelectedQuestion(null);
+                            setMessages([{ text: welcomeMessage, isUser: false }]);
+                          }}
+                        >
+                          Start Again
+                        </Button>
+                      )}
                     </div>
                   </div>
                 ))}
