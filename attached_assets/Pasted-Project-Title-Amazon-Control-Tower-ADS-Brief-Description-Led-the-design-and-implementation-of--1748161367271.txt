@@ -1,0 +1,28 @@
+Project Title: Amazon Control Tower (ADS)
+Brief Description:
+Led the design and implementation of a centralized Control Tower dashboard integrating 13 tools to enable real-time visibility, improve delivery performance across 14+ Alexa Data Services programs, and reduce analyst monitoring effort by 60%. Played a key role in exceeding the 99% SO completion goal 4 months ahead of schedule, while managing coordination across 6 global sites and U.S.-based Program Managers.
+Key Technologies/Tools Used:
+SQL, Excel Macros, Amazon internal platforms, SO Monitoring Systems, Quality Dashboards, Associate Tools
+
+Link: https://drive.google.com/file/d/1qsHdzX33ThHGhdTiXCOtuVOyFGbL1E78/view?usp=drive_link________________________________________
+2. Project Title: Dynamic Shift Schedule Automation Framework
+Brief Description:
+Spearheaded the automation of weekly shift scheduling for over 4,300 employees across four sites at Amazon Alexa Data Services. Designed a dynamic planning engine and centralized ticketing system to replace manual Excel-based processes, ensuring SLA alignment, labor law compliance, and workforce satisfaction.
+Key Technologies/Tools Used:
+Excel (Advanced & VBA Macros), SQL, Google Sheets, Amazon internal planning tools, Outlook automation
+Link: https://drive.google.com/file/d/1d3KXQ_BMAOIhhVET7EXCW3XfxIXkwlnA/view?usp=drive_link
+________________________________________
+3. Project Title: Break Adherence Intelligence System
+Brief Description:
+Developed a real-time dashboard on Amazon QuickSight to track break adherence across a 24/7 workforce. The dashboard replaced manual email-based compliance reports and enabled proactive monitoring by shift, team, and site levels—reducing SLA breaches and improving productivity discipline.
+Key Technologies/Tools Used:
+Amazon QuickSight, SQL, Excel Macros, CSV Pipelines, Activity Logs
+Link: https://drive.google.com/file/d/1sIKltm0RZAziEE6FSct2_tws70zXqigs/view?usp=drive_link
+________________________________________
+4. Project Title: AI Pitch Competition – Inter-University Launch
+Brief Description:
+Conceived, organized, and executed UCR’s first inter-university AI Pitch Competition. Expanded participation across institutions, secured sponsorship from Perplexity.ai, and scaled the event from 40 to 135+ attendees. Managed marketing, judge recruitment, operations, and event flow—all through a 1-year vision driven by a lean student team.
+Key Technologies/Tools Used:
+Google Workspace, Canva, Excel, Event Management Platforms, Zoom, LinkedIn Outreach, Perplexity.ai
+
+Link: https://drive.google.com/file/d/1ga1eV_BzVGUT5GArJtvGkZjyREWczbdJ/view?usp=drive_link
