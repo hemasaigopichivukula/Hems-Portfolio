@@ -114,7 +114,7 @@ export default function ChatBot() {
                     </div>
                   </div>
                 ))}
-                  )}
+                  ))}
               </div>
             </ScrollArea>
             <form onSubmit={handleSend} className="mt-4 flex gap-2">
