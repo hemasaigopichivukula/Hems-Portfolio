@@ -59,12 +59,12 @@ export default function Navigation() {
             <i className="fas fa-bars text-2xl"></i>
           </button>
 
-          <ul className={`${isMobileMenuOpen ? 'flex' : 'hidden'} md:flex md:flex-row w-full md:w-auto pt-4 md:pt-0 flex-col md:space-x-4 space-y-2 md:space-y-0`}>
+          <ul className={`${isMobileMenuOpen ? 'flex' : 'hidden'} md:flex md:flex-row w-full md:w-full pt-4 md:pt-0 flex-col md:justify-between md:items-center space-y-2 md:space-y-0`}>
             {menuItems.map((item) => (
-              <li key={item.id}>
+              <li key={item.id} className="md:flex-1">
                 <button 
                 onClick={() => scrollToSection(item.id)} 
-                className="hover:text-yellow-300 transition flex flex-col items-center py-2 px-2 w-full text-center rounded-md hover:bg-blue-800"
+                className="hover:text-yellow-300 transition flex flex-col items-center py-2 px-1 w-full text-center rounded-md hover:bg-blue-800"
               >
                 <i className={`fas ${item.icon} text-lg mb-1`}></i>
                 <span className="text-xs">{item.label}</span>
