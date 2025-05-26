@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Card, CardContent } from "./ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
@@ -53,7 +52,7 @@ export default function Gallery() {
                 >
                   <Card className="overflow-hidden">
                     <CardContent className="p-0">
-                      <div className="relative w-full h-[600px]">
+                      <div className="relative w-full h-[400px]">
                         <img 
                           src={item.url} 
                           alt={item.title}
@@ -67,7 +66,7 @@ export default function Gallery() {
                       </div>
                       <div className="p-6 bg-white/95 w-full backdrop-blur-sm">
                         <h3 className="font-semibold text-xl mb-2">{item.title}</h3>
-                        <p className="text-gray-600">{item.description}</p>
+                        <p className="text-gray-600 text-sm md:text-base leading-relaxed">{item.description}</p>
                       </div>
                     </CardContent>
                   </Card>
