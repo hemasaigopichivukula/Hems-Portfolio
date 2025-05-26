@@ -7,7 +7,7 @@ channel = "stable-24_05"
 
 [deployment]
 deploymentTarget = "static"
-publicDir = "client"
+publicDir = "dist/public"
 buildCommand = "npm run build"
 
 [[deployment.rewrites]]
