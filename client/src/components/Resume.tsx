@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "./ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
+import { useEffect, useState } from "react";
+import type { CarouselApi } from "./ui/carousel";
 
 const galleryItems = [
   {
@@ -36,11 +38,54 @@ const galleryItems = [
 ];
 
 export default function Gallery() {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
+
+  // Auto-scroll functionality
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    const autoScroll = setInterval(() => {
+      if (current === count) {
+        api.scrollTo(0); // Go back to first slide
+      } else {
+        api.scrollNext();
+      }
+    }, 4000); // Auto-scroll every 4 seconds
+
+    return () => {
+      clearInterval(autoScroll);
+    };
+  }, [api, current, count]);
+
   return (
     <section id="gallery" className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-12 text-center">Gallery</h2>
-        <Carousel className="w-full max-w-5xl mx-auto">
+        <Carousel 
+          className="w-full max-w-5xl mx-auto"
+          setApi={setApi}
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+        >
           <CarouselContent>
             {galleryItems.map((item, index) => (
               <CarouselItem key={index}>
@@ -77,6 +122,19 @@ export default function Gallery() {
           <CarouselPrevious className="left-4" />
           <CarouselNext className="right-4" />
         </Carousel>
+        
+        {/* Slide indicators */}
+        <div className="flex justify-center mt-6 space-x-2">
+          {Array.from({ length: count }).map((_, index) => (
+            <button
+              key={index}
+              className={`w-3 h-3 rounded-full transition-colors ${
+                index + 1 === current ? 'bg-blue-600' : 'bg-gray-300'
+              }`}
+              onClick={() => api?.scrollTo(index)}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
