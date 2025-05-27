@@ -218,6 +218,19 @@ section:not(:first-of-type) {
   box-sizing: border-box;
 }
 
+/* Ensure sections are visible by default */
+section {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+
+/* AOS animations will override these when loaded */
+[data-aos] {
+  opacity: 1;
+  transform: none;
+}
+
 /* Fix for mobile viewport issues */
 @supports (-webkit-touch-callout: none) {
   body {
