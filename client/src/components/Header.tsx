@@ -10,7 +10,7 @@ export default function Header({ id }: { id?: string }) {
       transition={{ duration: 0.8 }}
       className="relative text-center py-12 md:py-16 bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg min-h-[60vh] md:min-h-auto flex items-center"
     >
-      <div className="max-w-6xl mx-auto px-4 w-full" data-aos="fade-up">
+      <div className="max-w-6xl mx-auto px-4 w-full">
         <div className="relative inline-block">
           <div className="mx-auto rounded-full w-32 h-32 overflow-hidden border-4 border-white shadow-xl mb-6">
             <img 
