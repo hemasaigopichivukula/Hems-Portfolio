@@ -216,10 +216,10 @@ export default function ChatBot() {
       </div>
 
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="sm:max-w-[425px] fixed right-4 left-auto sm:translate-x-0 sm:translate-y-[-50%] sm:top-[50%] data-[state=open]:duration-300">
-          <div className="flex flex-col h-[500px]">
+        <DialogContent className="sm:max-w-[425px] max-w-[95vw] w-full max-h-[80vh] h-auto fixed inset-4 sm:right-4 sm:left-auto sm:inset-auto sm:translate-x-0 sm:translate-y-[-50%] sm:top-[50%] data-[state=open]:duration-300 overflow-hidden">
+          <div className="flex flex-col h-full max-h-[70vh] sm:h-[500px]">
             <div className="text-lg font-bold mb-4">Chat Support</div>
-            <ScrollArea className="flex-1 pr-4">
+            <ScrollArea className="flex-1 pr-2 sm:pr-4 max-h-[50vh] sm:max-h-none">
               <div className="space-y-4">
                 {messages.map((message, i) => (
                   <div
