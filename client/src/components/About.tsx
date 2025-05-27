@@ -1,7 +1,7 @@
 export default function About() {
   return (
-    <section id="about" className="py-16 px-6" data-aos="fade-up">
-      <div className="max-w-4xl mx-auto">
+    <section id="about" className="py-12 md:py-16 px-4 md:px-6 bg-gray-50" data-aos="fade-up">
+      <div className="max-w-4xl mx-auto w-full">
         <h2 className="text-3xl font-bold text-primary mb-2 flex items-center">
           <span className="bg-primary text-white w-10 h-10 rounded-full inline-flex items-center justify-center mr-3">
             <i className="fas fa-user-alt text-sm"></i>
@@ -10,19 +10,19 @@ export default function About() {
         </h2>
         <div className="w-20 h-1 bg-primary mb-6"></div>
         
-        <div className="flex flex-col md:flex-row gap-8 items-center">
-          <div className="md:w-2/3">
-            <p className="text-lg leading-relaxed mb-4">
+        <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+          <div className="w-full md:w-2/3">
+            <p className="text-base md:text-lg leading-relaxed mb-4">
               I'm a strategic problem-solver focused on engineering clarity from complexity.
             </p>
-            <p className="text-lg leading-relaxed mb-4">
+            <p className="text-base md:text-lg leading-relaxed mb-4">
               With an MBA and experience at Amazon and mission-driven organizations, I transform operational challenges into structured, actionable systems through deep analysis and innovative solutions.
             </p>
-            <p className="text-lg leading-relaxed mb-4">
+            <p className="text-base md:text-lg leading-relaxed mb-4">
               My approach combines analytical thinking with practical execution—turning complex problems into clear, measurable results that drive organizational success.
             </p>
           </div>
-          <div className="md:w-1/3">
+          <div className="w-full md:w-1/3">
             <div className="bg-white rounded-lg shadow-xl p-6">
               <h3 className="font-semibold text-xl mb-3 text-primary">Details</h3>
               <ul className="space-y-3">

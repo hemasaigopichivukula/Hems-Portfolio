@@ -8,9 +8,9 @@ export default function Header({ id }: { id?: string }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="relative text-center py-16 bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg"
+      className="relative text-center py-12 md:py-16 bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg min-h-[60vh] md:min-h-auto flex items-center"
     >
-      <div className="max-w-6xl mx-auto px-4" data-aos="fade-up">
+      <div className="max-w-6xl mx-auto px-4 w-full" data-aos="fade-up">
         <div className="relative inline-block">
           <div className="mx-auto rounded-full w-32 h-32 overflow-hidden border-4 border-white shadow-xl mb-6">
             <img 
@@ -26,11 +26,11 @@ export default function Header({ id }: { id?: string }) {
           </div>
           <div className="absolute bottom-6 right-0 bg-green-500 h-4 w-4 rounded-full border-2 border-white"></div>
         </div>
-        <h1 className="text-4xl md:text-5xl font-bold mb-2">Hema Sai Gopi Chivukula</h1>
-        <p className="text-lg md:text-xl text-blue-100 mt-2 max-w-2xl mx-auto">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 px-2">Hema Sai Gopi Chivukula</h1>
+        <p className="text-base sm:text-lg md:text-xl text-blue-100 mt-2 max-w-2xl mx-auto px-4">
           MBA mind behind streamlined solutions — where strategy meets simplicity
         </p>
-        <div className="flex justify-center gap-4 mt-6">
+        <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mt-6 px-4">
           <Button 
             asChild
             variant="secondary"

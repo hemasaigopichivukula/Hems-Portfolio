@@ -58,8 +58,8 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 px-6" data-aos="fade-up">
-      <div className="max-w-4xl mx-auto">
+    <section id="contact" className="py-12 md:py-20 px-4 md:px-6 bg-gray-50" data-aos="fade-up">
+      <div className="max-w-4xl mx-auto w-full">
         <h2 className="text-3xl font-bold text-primary mb-2 flex items-center">
           <span className="bg-primary text-white w-10 h-10 rounded-full inline-flex items-center justify-center mr-3">
             <i className="fas fa-envelope text-sm"></i>
@@ -68,7 +68,7 @@ export default function Contact() {
         </h2>
         <div className="w-20 h-1 bg-primary mb-10"></div>
 
-        <div className="flex flex-col lg:flex-row gap-8">
+        <div className="flex flex-col lg:flex-row gap-6 md:gap-8">
           <div className="lg:w-1/3">
             <div className="bg-white rounded-xl shadow-xl p-6">
               <h3 className="text-xl font-bold mb-4 text-primary">Get In Touch</h3>
