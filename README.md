@@ -1,4 +1,3 @@
-Here’s a **short, clean one-file README** 👇
 
 ````markdown
 # Setup & Run
