@@ -1,20 +1,43 @@
-# Test Only Instructions
+Here’s a **short, clean one-file README** 👇
 
-Warning: this setup is only for testing.
+````markdown
+# Setup & Run
 
-1. Build the project:
+## Install
+```bash
+npm install
+npm install --save-dev cross-env
+````
+
+## Run (Dev)
+
+```bash
+npm run dev
+```
+
+Open:
+
+```
+http://localhost:5000
+```
+
+## If port is busy
+
+```bash
+netstat -ano | findstr :5000
+taskkill /PID <PID> /F
+```
+
+## Production
 
 ```bash
 npm run build
+npm start
 ```
 
-2. Start the server:
+## Notes
 
-```bash
-node dist/index.js
+* No build needed for `dev`
+* Build required for `start`
+
 ```
-
-3. Open your browser at:
-
-[http://localhost:5000](http://localhost:5000)
-
