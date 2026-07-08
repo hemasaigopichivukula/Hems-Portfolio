@@ -16,8 +16,8 @@ import Gallery from "@/components/Resume";
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-r from-blue-50 to-blue-100 text-gray-800">
-      <Header id="home" />
       <Navigation />
+      <Header id="home" />
       <main>
         <About />
         <Experience />
