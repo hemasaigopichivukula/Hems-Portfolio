@@ -61,6 +61,24 @@ export const projectsData = [
     icon: "fa-calendar-check",
     featured: false,
     tags: ["Excel VBA", "SQL", "Process Automation", "Workforce Planning"]
+  },
+  {
+    title: "QSR Operations & Revenue Optimization Study",
+    description: "Independent consulting-style analysis examining peak-hour bottlenecks, drive-thru throughput constraints, customer experience gaps, staffing alignment, and potential revenue recovery opportunities in quick-service restaurant operations.",
+    link: "https://drive.google.com/file/d/19kE8TL2Ww0-6sqJLc77TdkTRJlPjowQI/view?usp=sharing",
+    icon: "fa-store",
+    featured: false,
+    tags: ["Operations Strategy", "Revenue Analysis", "Capacity Planning", "Process Improvement"],
+    ctaText: "View Case Study"
+  },
+  {
+    title: "AI Email Assistant & Intelligent Inbox Workflow",
+    description: "Built a functional email-connected AI assistant that supports conversational inbox retrieval, sender-based searches, date-aware filtering, recent-message queries, and priority visibility to reduce inbox navigation friction.",
+    link: "https://drive.google.com/file/d/12F1W9LobZRcpcii4L03U8CqbzLqE2UuU/view?usp=sharing",
+    icon: "fa-robot",
+    featured: false,
+    tags: ["AI Automation", "Product Thinking", "Workflow Design", "Information Retrieval"],
+    ctaText: "View Case Study"
   }
 ];
 

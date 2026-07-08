@@ -24,7 +24,7 @@ export default function Projects() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <a href={project.link} target="_blank" 
+              <a href={project.link} target="_blank" rel="noopener noreferrer"
                  className="bg-white rounded-xl overflow-hidden shadow-xl flex flex-col h-full hover:shadow-2xl transition duration-300 transform group-hover:-translate-y-2 group-hover:border-b-4 group-hover:border-primary">
                 <div className="h-40 bg-gradient-to-br from-blue-200 to-blue-400 relative overflow-hidden">
                   <div className="absolute inset-0 bg-blue-900 opacity-80 group-hover:opacity-70 transition-opacity"></div>
@@ -48,7 +48,7 @@ export default function Projects() {
                 </div>
                 <div className="p-4 border-t border-gray-100 flex justify-between items-center">
                   <span className="text-primary font-medium flex items-center group-hover:font-bold">
-                    View Project <i className="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                    {project.ctaText ?? "View Project"} <i className="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
                   </span>
                   <span className="flex items-center text-gray-500">
                     <i className="fab fa-github text-lg"></i>
