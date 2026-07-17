@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "./ui/button";
 import { Dialog, DialogContent } from "./ui/dialog";
 import { Input } from "./ui/input";
@@ -11,204 +11,440 @@ interface Message {
   isGreeting?: boolean;
 }
 
-const categories = ["About Hema", "Skills & Approach", "How I Work", "Projects & Services", "Contact", "Other"];
+const categories = [
+  "About Hema",
+  "Skills & Approach",
+  "How I Work",
+  "Projects & Services",
+  "Contact",
+  "Other",
+];
 
-const questionsAndAnswers: Record<string, { Q: string; A: string }[]> = {
+const questionsAndAnswers: Record<
+  string,
+  { Q: string; A: string }[]
+> = {
   "About Hema": [
-    { Q: "What do you do?", A: "I'm a strategic consultant and program manager. I help organizations improve operations, manage programs, and use data to make better decisions." },
-    { Q: "What kind of background do you have?", A: "I've worked at Amazon, universities, and nonprofits—managing global programs and solving real-world challenges." },
-    { Q: "What industries have you worked in?", A: "Mainly tech, education, and nonprofit sectors. I'm industry-flexible with a focus on solving execution-related problems." }
+    {
+      Q: "What do you do?",
+      A: "I'm a strategic consultant and program manager. I help organizations improve operations, manage programs, and use data to make better decisions.",
+    },
+    {
+      Q: "What kind of background do you have?",
+      A: "I've worked at Amazon, universities, and nonprofits—managing global programs and solving real-world challenges.",
+    },
+    {
+      Q: "What industries have you worked in?",
+      A: "Mainly tech, education, and nonprofit sectors. I'm industry-flexible with a focus on solving execution-related problems.",
+    },
   ],
+
   "Skills & Approach": [
-    { Q: "What are you good at?", A: "Project execution, stakeholder communication, process improvement, and data visualization." },
-    { Q: "What tools do you use?", A: "JIRA, Tableau, Power BI, Excel VBA, SQL, Monday.com, Microsoft Project, Notion, and Confluence." },
-    { Q: "How do you approach projects?", A: "I start by understanding the problem, align with goals, build a roadmap, and track progress through measurable outcomes." }
+    {
+      Q: "What are you good at?",
+      A: "Project execution, stakeholder communication, process improvement, and data visualization.",
+    },
+    {
+      Q: "What tools do you use?",
+      A: "JIRA, Tableau, Power BI, Excel VBA, SQL, Monday.com, Microsoft Project, Notion, and Confluence.",
+    },
+    {
+      Q: "How do you approach projects?",
+      A: "I start by understanding the problem, align with goals, build a roadmap, and track progress through measurable outcomes.",
+    },
   ],
+
   "How I Work": [
-    { Q: "Do you work with teams or individuals?", A: "Both! I support teams on strategy execution and work with individuals on process design or upskilling." },
-    { Q: "Are you open to remote or in-person roles?", A: "Yes, I'm flexible. I work remotely and am open to relocation for the right opportunity." },
-    { Q: "How do you handle resistance to change?", A: "By listening first. I connect changes to business outcomes and make transitions easy to adopt." }
+    {
+      Q: "Do you work with teams or individuals?",
+      A: "Both! I support teams on strategy execution and work with individuals on process design or upskilling.",
+    },
+    {
+      Q: "Are you open to remote or in-person roles?",
+      A: "Yes, I'm flexible. I work remotely and am open to relocation for the right opportunity.",
+    },
+    {
+      Q: "How do you handle resistance to change?",
+      A: "By listening first. I connect changes to business outcomes and make transitions easy to adopt.",
+    },
   ],
+
   "Projects & Services": [
-    { Q: "Can I see your work?", A: "Yes! Check out the Portfolio or Resume section on this site." },
-    { Q: "Do you do freelance consulting?", A: "Yes, I'm open to short-term consulting, strategic projects, or fractional leadership roles." },
-    { Q: "Can you help with dashboards or reporting?", A: "Absolutely. I've built dashboards that track KPIs, SLAs, and team performance in real-time." }
+    {
+      Q: "Can I see your work?",
+      A: "Yes! Visit the Projects section to explore my work in AI, operations strategy, analytics, program leadership, and workflow automation.",
+    },
+    {
+      Q: "What is your QSR Operations study?",
+      A: "It is an independent consulting-style analysis of peak-hour bottlenecks, drive-thru throughput, staffing alignment, customer experience, and potential revenue recovery opportunities.",
+    },
+    {
+      Q: "What is your AI Email Assistant project?",
+      A: "It is a functional email-connected AI assistant that supports conversational inbox retrieval, sender and date filtering, recent-message queries, and priority visibility.",
+    },
+    {
+      Q: "Do you do freelance consulting?",
+      A: "Yes, I'm open to short-term consulting, strategic projects, and fractional leadership opportunities.",
+    },
+    {
+      Q: "Can you help with dashboards or reporting?",
+      A: "Absolutely. I've built dashboards that track KPIs, SLAs, workforce performance, and operational risks.",
+    },
   ],
-  "Contact": [
-    { Q: "How can I contact you?", A: "Email me at hchiv001@ucr.edu or use the Contact Me section on this site." }
+
+  Contact: [
+    {
+      Q: "How can I contact you?",
+      A: "Email me at hchiv001@ucr.edu or use the Contact Me section on this website.",
+    },
   ],
-  "Other": [
-    { Q: "Not seeing what you need?", A: "Just send me a quick message using the Contact Me form. I'll get back to you soon" }
-  ]
+
+  Other: [
+    {
+      Q: "Not seeing what you need?",
+      A: "Send me a quick message using the Contact Me form, and I'll get back to you soon.",
+    },
+  ],
 };
 
 export default function ChatBot() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [selectedQuestion, setSelectedQuestion] = useState<string | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(
+    null
+  );
+  const [selectedQuestion, setSelectedQuestion] = useState<string | null>(
+    null
+  );
 
-  const welcomeMessage = "👋 Hi there! I'm PP, Hema's assistant, and I'm here to help.\nPlease type your question or click the 💡 Option button below to explore categories.";
+  // This reference marks the bottom of the conversation.
+  const messagesEndRef = useRef<HTMLDivElement | null>(null);
 
+  const welcomeMessage =
+    "👋 Hi there! I'm PP, Hema's assistant, and I'm here to help.\nPlease type your question or click the 💡 Options button below to explore categories.";
+
+  // Show welcome message when chatbot opens.
   useEffect(() => {
     if (open && messages.length === 0) {
-      setMessages([{ text: welcomeMessage, isUser: false }]);
+      setMessages([
+        {
+          text: welcomeMessage,
+          isUser: false,
+          isGreeting: true,
+        },
+      ]);
     }
-  }, [open]);
+  }, [open, messages.length]);
+
+  // Automatically scroll after messages, categories, or questions change.
+  useEffect(() => {
+    if (!open) return;
+
+    const timer = window.setTimeout(() => {
+      messagesEndRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "end",
+      });
+    }, 150);
+
+    return () => window.clearTimeout(timer);
+  }, [open, messages, selectedCategory, selectedQuestion]);
 
   const handleCategoryClick = (category: string) => {
     setSelectedCategory(category);
     setSelectedQuestion(null);
-    setMessages(prev => [...prev,
-      { text: category, isUser: true },
-      { text: `Here are some common questions about ${category}:`, isUser: false }
+
+    setMessages((previousMessages) => [
+      ...previousMessages,
+      {
+        text: category,
+        isUser: true,
+      },
+      {
+        text: `Here are some common questions about ${category}:`,
+        isUser: false,
+      },
     ]);
-    setTimeout(() => {
-      const scrollArea = document.querySelector('[data-radix-scroll-area-viewport]');
-      if (scrollArea) {
-        scrollArea.scrollTo({
-          top: scrollArea.scrollHeight,
-          behavior: 'smooth'
-        });
-      }
-    }, 100);
   };
 
-  const handleQuestionClick = (question: string, answer: string) => {
+  const handleQuestionClick = (
+    question: string,
+    answer: string
+  ) => {
     setSelectedQuestion(question);
-    setMessages(prev => [...prev,
-      { text: question, isUser: true },
-      { text: answer, isUser: false }
+
+    setMessages((previousMessages) => [
+      ...previousMessages,
+      {
+        text: question,
+        isUser: true,
+      },
+      {
+        text: answer,
+        isUser: false,
+      },
     ]);
   };
 
-  const handleSend = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!input.trim()) return;
+  const handleStartAgain = () => {
+    setSelectedCategory(null);
+    setSelectedQuestion(null);
 
-    const userMessage = { text: input, isUser: true };
-    setMessages(prev => [...prev, userMessage]);
+    setMessages([
+      {
+        text: welcomeMessage,
+        isUser: false,
+        isGreeting: true,
+      },
+    ]);
+  };
+
+  const handleSend = (event: React.FormEvent) => {
+    event.preventDefault();
+
+    const trimmedInput = input.trim();
+
+    if (!trimmedInput) return;
+
+    const currentInput = trimmedInput;
+
+    setMessages((previousMessages) => [
+      ...previousMessages,
+      {
+        text: currentInput,
+        isUser: true,
+      },
+    ]);
+
     setInput("");
 
-    const category = categories.find(cat => 
-      input.toLowerCase().includes(cat.toLowerCase())
+    const matchingCategory = categories.find((category) =>
+      currentInput
+        .toLowerCase()
+        .includes(category.toLowerCase())
     );
 
-    setTimeout(() => {
-      const timeGreetings = ['good morning', 'good afternoon', 'good evening', 'good night'];
-      const casualGreetings = ['hi', 'hello', 'hey', 'howdy', 'hola', 'namaste'];
-      const goodbyes = ['bye', 'goodbye', 'see you', 'cya'];
-      const thanks = ['thank', 'thanks', 'appreciate'];
+    window.setTimeout(() => {
+      const timeGreetings = [
+        "good morning",
+        "good afternoon",
+        "good evening",
+        "good night",
+      ];
 
-      const extractName = (input: string): string | null => {
-        const words = input.split(' ');
-        // Check for "I am" or "I'm" patterns
-        const iAmIndex = words.findIndex(w => w.toLowerCase() === 'am' || w.toLowerCase() === "i'm");
+      const casualGreetings = [
+        "hi",
+        "hello",
+        "hey",
+        "howdy",
+        "hola",
+        "namaste",
+      ];
+
+      const goodbyes = [
+        "bye",
+        "goodbye",
+        "see you",
+        "cya",
+      ];
+
+      const thanks = [
+        "thank",
+        "thanks",
+        "appreciate",
+      ];
+
+      const lowerInput = currentInput.toLowerCase();
+
+      const extractName = (text: string): string | null => {
+        const words = text.trim().split(/\s+/);
+
+        const lowerWords = words.map((word) =>
+          word.toLowerCase()
+        );
+
+        const iAmIndex = lowerWords.findIndex(
+          (word, index) =>
+            word === "am" &&
+            lowerWords[index - 1] === "i"
+        );
+
         if (iAmIndex !== -1 && words[iAmIndex + 1]) {
           return words[iAmIndex + 1];
         }
-        // Check for "my name is" pattern
-        const nameIsIndex = words.findIndex((w, i) => 
-          w.toLowerCase() === 'name' && 
-          words[i + 1]?.toLowerCase() === 'is' &&
-          words[i + 2]
+
+        const imIndex = lowerWords.findIndex(
+          (word) => word === "i'm"
         );
-        if (nameIsIndex !== -1) {
-          return words[nameIsIndex + 2];
+
+        if (imIndex !== -1 && words[imIndex + 1]) {
+          return words[imIndex + 1];
         }
-        // If single word that's not a greeting, assume it's a name
-        if (words.length === 1 && 
-            !timeGreetings.some(g => words[0].toLowerCase().includes(g)) &&
-            !casualGreetings.some(g => words[0].toLowerCase().includes(g))) {
-          return words[0];
+
+        const nameIndex = lowerWords.findIndex(
+          (word, index) =>
+            word === "name" &&
+            lowerWords[index + 1] === "is"
+        );
+
+        if (nameIndex !== -1 && words[nameIndex + 2]) {
+          return words[nameIndex + 2];
         }
+
         return null;
       };
 
-      const lowerInput = input.toLowerCase();
-      const name = extractName(input);
+      const name = extractName(currentInput);
 
-      if (timeGreetings.some(greeting => lowerInput.includes(greeting))) {
-        const greeting = timeGreetings.find(g => lowerInput.includes(g));
-        setMessages(prev => [...prev, {
-          text: `${greeting?.charAt(0).toUpperCase()}${greeting?.slice(1)}! 👋 I'm PP, Hema's assistant, and I'm here to help.\nPlease type your question or click the 💡 Option button below to explore categories.`,
-          isUser: false,
-          isGreeting: true
-        }]);
-      } else if (casualGreetings.some(greeting => lowerInput.includes(greeting))) {
-        const greeting = casualGreetings.find(g => lowerInput.includes(g));
-        let response = `${greeting?.charAt(0).toUpperCase()}${greeting?.slice(1)}! `;
+      if (
+        timeGreetings.some((greeting) =>
+          lowerInput.includes(greeting)
+        )
+      ) {
+        const greeting = timeGreetings.find((item) =>
+          lowerInput.includes(item)
+        );
+
+        setMessages((previousMessages) => [
+          ...previousMessages,
+          {
+            text: `${
+              greeting
+                ? greeting.charAt(0).toUpperCase() +
+                  greeting.slice(1)
+                : "Hello"
+            }! 👋 I'm PP, Hema's assistant, and I'm here to help.\nPlease type your question or click the 💡 Options button below to explore categories.`,
+            isUser: false,
+            isGreeting: true,
+          },
+        ]);
+
+        return;
+      }
+
+      if (
+        casualGreetings.some((greeting) =>
+          lowerInput.includes(greeting)
+        )
+      ) {
+        const greeting = casualGreetings.find((item) =>
+          lowerInput.includes(item)
+        );
+
+        let response = `${
+          greeting
+            ? greeting.charAt(0).toUpperCase() +
+              greeting.slice(1)
+            : "Hello"
+        }! `;
+
         if (name) {
           response += `Hi ${name}, `;
         }
-        response += `👋 I'm PP, Hema's assistant, and I'm here to help.\nPlease type your question or click the 💡 Option button below to explore categories.`;
 
-        setMessages(prev => [...prev, {
-          text: response,
-          isUser: false,
-          isGreeting: true
-        }]);
-      } else if (goodbyes.some(bye => lowerInput.includes(bye))) {
-        setMessages(prev => [...prev, {
-          text: "Goodbye! Feel free to come back if you have more questions about Hema!",
-          isUser: false
-        }]);
-      } else if (thanks.some(thank => lowerInput.includes(thank))) {
-        setMessages(prev => [...prev, {
-          text: "You're welcome! I'm happy to help you learn more about Hema.",
-          isUser: false
-        }]);
-      } else if (category) {
-        setSelectedCategory(category);
-        setSelectedQuestion(null);
-        setMessages(prev => [...prev, {
-          text: `Here are some common questions about ${category}:`,
-          isUser: false
-        }]);
-      } else {
-        setMessages(prev => [...prev, {
-          text: "I'm focused on helping you learn about Hema. Please choose from one of these categories to get specific information:\n\n" + categories.join("\n"),
-          isUser: false
-        }]);
+        response +=
+          "👋 I'm PP, Hema's assistant, and I'm here to help.\nPlease type your question or click the 💡 Options button below to explore categories.";
+
+        setMessages((previousMessages) => [
+          ...previousMessages,
+          {
+            text: response,
+            isUser: false,
+            isGreeting: true,
+          },
+        ]);
+
+        return;
       }
 
-      // Scroll to bottom after messages update
-      setTimeout(() => {
-        const scrollArea = document.querySelector('[data-radix-scroll-area-viewport]');
-        if (scrollArea) {
-          scrollArea.scrollTo({
-            top: scrollArea.scrollHeight,
-            behavior: 'smooth'
-          });
-        }
-      }, 100);
+      if (
+        goodbyes.some((goodbye) =>
+          lowerInput.includes(goodbye)
+        )
+      ) {
+        setMessages((previousMessages) => [
+          ...previousMessages,
+          {
+            text: "Goodbye! Feel free to return if you have more questions about Hema.",
+            isUser: false,
+          },
+        ]);
+
+        return;
+      }
+
+      if (
+        thanks.some((thankYou) =>
+          lowerInput.includes(thankYou)
+        )
+      ) {
+        setMessages((previousMessages) => [
+          ...previousMessages,
+          {
+            text: "You're welcome! I'm happy to help you learn more about Hema.",
+            isUser: false,
+          },
+        ]);
+
+        return;
+      }
+
+      if (matchingCategory) {
+        setSelectedCategory(matchingCategory);
+        setSelectedQuestion(null);
+
+        setMessages((previousMessages) => [
+          ...previousMessages,
+          {
+            text: `Here are some common questions about ${matchingCategory}:`,
+            isUser: false,
+          },
+        ]);
+
+        return;
+      }
+
+      setMessages((previousMessages) => [
+        ...previousMessages,
+        {
+          text:
+            "I'm focused on helping you learn about Hema. Please click the 💡 Options button to explore these categories:\n\n" +
+            categories.join("\n"),
+          isUser: false,
+          isGreeting: true,
+        },
+      ]);
     }, 500);
   };
 
   return (
     <>
-      <div className="fixed bottom-4 right-4 flex flex-col items-end gap-2 z-50">
-        <div className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm shadow-md animate-bounce">
-          Hema's Assistant
+      <div className="fixed bottom-4 right-4 z-50 flex flex-col items-end gap-2">
+        <div className="animate-bounce rounded-full bg-primary px-3 py-1 text-sm text-primary-foreground shadow-md">
+          Hema&apos;s Assistant
         </div>
+
         <Button
-          className="rounded-full w-14 h-14 p-0 shadow-lg bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 transition-all duration-300"
+          className="h-14 w-14 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 p-0 shadow-lg transition-all duration-300 hover:from-blue-600 hover:to-purple-600"
           onClick={() => setOpen(true)}
+          aria-label="Open Hema's assistant"
         >
           <div className="robot-container">
             <div className="robot">
               <div className="head">
-                <div className="eyes"></div>
-                <div className="antenna"></div>
+                <div className="eyes" />
+                <div className="antenna" />
               </div>
+
               <div className="body">
-                <div className="arm left-arm"></div>
-                <div className="arm right-arm animate-wave"></div>
+                <div className="arm left-arm" />
+                <div className="arm right-arm animate-wave" />
               </div>
+
               <div className="legs">
-                <div className="leg left-leg"></div>
-                <div className="leg right-leg"></div>
+                <div className="leg left-leg" />
+                <div className="leg right-leg" />
               </div>
             </div>
           </div>
@@ -216,118 +452,143 @@ export default function ChatBot() {
       </div>
 
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="w-[95vw] max-w-[400px] h-[85vh] max-h-[600px] sm:max-w-[425px] sm:h-[500px] fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] sm:right-4 sm:left-auto sm:translate-x-0 data-[state=open]:duration-300 overflow-hidden p-4 z-50">
-          <div className="flex flex-col h-full">
-            <div className="text-lg font-bold mb-4">Chat Support</div>
-            <ScrollArea className="flex-1 pr-2 overflow-y-auto">
-              <div className="space-y-4">
-                {messages.map((message, i) => (
-                  <div
-                    key={i}
-                    className={`flex ${message.isUser ? 'justify-end' : 'justify-start'}`}
-                  >
+        <DialogContent className="fixed left-[50%] top-[50%] z-50 h-[85vh] max-h-[600px] w-[95vw] max-w-[400px] translate-x-[-50%] translate-y-[-50%] overflow-hidden p-4 data-[state=open]:duration-300 sm:left-auto sm:right-4 sm:h-[500px] sm:max-w-[425px] sm:translate-x-0">
+          <div className="flex h-full flex-col">
+            <div className="mb-4 text-lg font-bold">
+              Chat Support
+            </div>
+
+            <ScrollArea className="min-h-0 flex-1 pr-2">
+              <div className="space-y-4 pb-4">
+                {messages.map((message, index) => {
+                  const isLatestMessage =
+                    index === messages.length - 1;
+
+                  const shouldShowCategoryQuestions =
+                    !message.isUser &&
+                    selectedCategory &&
+                    message.text ===
+                      `Here are some common questions about ${selectedCategory}:`;
+
+                  return (
                     <div
-                      className={`rounded-lg px-4 py-2 max-w-[80%] whitespace-pre-line ${
+                      key={`${message.text}-${index}`}
+                      className={`flex ${
                         message.isUser
-                          ? 'bg-primary text-primary-foreground'
-                          : 'bg-muted'
+                          ? "justify-end"
+                          : "justify-start"
                       }`}
                     >
-                      {message.text}
-                      {!message.isUser && (i === 0 || message.isGreeting) && (
-                        <div className="mt-4">
-                          <Button
-                            variant="outline"
-                            className="w-full text-sm mb-2"
-                            onClick={() => {
-                              setMessages(prev => [...prev, {
-                                text: "Here are all available categories:",
-                                isUser: false
-                              }, {
-                                text: "Categories",
-                                isUser: false,
-                                showCategories: true
-                              }]);
-                              setTimeout(() => {
-                                const scrollArea = document.querySelector('[data-radix-scroll-area-viewport]');
-                                if (scrollArea) {
-                                  scrollArea.scrollTo({
-                                    top: scrollArea.scrollHeight,
-                                    behavior: 'smooth'
-                                  });
-                                }
-                              }, 100);
-                            }}
-                          >
-                            💡 Options
-                          </Button>
-                        </div>
-                      )}
-                      {!message.isUser && message.showCategories && (
-                        <div className="grid grid-cols-2 gap-2 mt-4">
-                          {categories.map((category) => (
-                            <Button
-                              key={category}
-                              variant="outline"
-                              className="text-sm"
-                              onClick={() => handleCategoryClick(category)}
-                            >
-                              {category}
-                            </Button>
-                          ))}
-                        </div>
-                      )}
-                      {!message.isUser && selectedCategory && message.text.includes(selectedCategory) && (
-                        <div className="flex flex-col gap-2 mt-4">
-                          {questionsAndAnswers[selectedCategory].map(({ Q, A }) => (
-                            <Button
-                              key={Q}
-                              variant="outline"
-                              className="text-sm text-left p-3 w-full bg-white hover:bg-gray-50 rounded-lg shadow-sm"
-                              onClick={() => {
-                                handleQuestionClick(Q, A);
-                                setTimeout(() => {
-                                  const scrollArea = document.querySelector('[data-radix-scroll-area-viewport]');
-                                  if (scrollArea) {
-                                    scrollArea.scrollTo({
-                                      top: scrollArea.scrollHeight,
-                                      behavior: 'smooth'
-                                    });
+                      <div
+                        className={`max-w-[85%] whitespace-pre-line rounded-lg px-4 py-2 ${
+                          message.isUser
+                            ? "bg-primary text-primary-foreground"
+                            : "bg-muted"
+                        }`}
+                      >
+                        {message.text}
+
+                        {!message.isUser &&
+                          message.isGreeting && (
+                            <div className="mt-4">
+                              <Button
+                                variant="outline"
+                                className="mb-2 w-full text-sm"
+                                onClick={() => {
+                                  setSelectedCategory(null);
+                                  setSelectedQuestion(null);
+
+                                  setMessages(
+                                    (previousMessages) => [
+                                      ...previousMessages,
+                                      {
+                                        text: "Choose a category below:",
+                                        isUser: false,
+                                        showCategories: true,
+                                      },
+                                    ]
+                                  );
+                                }}
+                              >
+                                💡 Options
+                              </Button>
+                            </div>
+                          )}
+
+                        {!message.isUser &&
+                          message.showCategories && (
+                            <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                              {categories.map((category) => (
+                                <Button
+                                  key={category}
+                                  variant="outline"
+                                  className="h-auto whitespace-normal px-3 py-2 text-sm"
+                                  onClick={() =>
+                                    handleCategoryClick(category)
                                   }
-                                }, 100);
-                              }}
+                                >
+                                  {category}
+                                </Button>
+                              ))}
+                            </div>
+                          )}
+
+                        {shouldShowCategoryQuestions && (
+                          <div className="mt-4 flex flex-col gap-2">
+                            {questionsAndAnswers[
+                              selectedCategory
+                            ].map(({ Q, A }) => (
+                              <Button
+                                key={Q}
+                                variant="outline"
+                                className="h-auto w-full whitespace-normal rounded-lg bg-white p-3 text-left text-sm shadow-sm hover:bg-gray-50"
+                                onClick={() =>
+                                  handleQuestionClick(Q, A)
+                                }
+                              >
+                                {Q}
+                              </Button>
+                            ))}
+                          </div>
+                        )}
+
+                        {!message.isUser &&
+                          selectedQuestion &&
+                          isLatestMessage && (
+                            <Button
+                              variant="outline"
+                              className="mt-4 w-full text-sm"
+                              onClick={handleStartAgain}
                             >
-                              {Q}
+                              Start Again
                             </Button>
-                          ))}
-                        </div>
-                      )}
-                      {selectedQuestion && (
-                        <Button
-                          variant="outline"
-                          className="mt-4 w-full text-sm"
-                          onClick={() => {
-                            setSelectedCategory(null);
-                            setSelectedQuestion(null);
-                            setMessages([{ text: welcomeMessage, isUser: false }]);
-                          }}
-                        >
-                          Start Again
-                        </Button>
-                      )}
+                          )}
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
+
+                {/* The chatbot scrolls to this element automatically. */}
+                <div ref={messagesEndRef} className="h-px" />
               </div>
             </ScrollArea>
-            <form onSubmit={handleSend} className="mt-4 flex gap-2">
+
+            <form
+              onSubmit={handleSend}
+              className="mt-4 flex gap-2"
+            >
               <Input
                 value={input}
-                onChange={(e) => setInput(e.target.value)}
-                placeholder="Type a category..."
+                onChange={(event) =>
+                  setInput(event.target.value)
+                }
+                placeholder="Type a question..."
                 className="flex-1"
               />
-              <Button type="submit">Send</Button>
+
+              <Button type="submit">
+                Send
+              </Button>
             </form>
           </div>
         </DialogContent>
