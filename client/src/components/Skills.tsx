@@ -1,4 +1,4 @@
-import { technicalSkills, softSkills } from "@/lib/data";
+import { capabilityGroups, certifications, professionalStrengths } from "@/lib/data";
 import { motion } from "framer-motion";
 
 export default function Skills() {
@@ -14,39 +14,59 @@ export default function Skills() {
         <div className="w-20 h-1 bg-primary mb-10"></div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          <div>
-            <h3 className="text-xl font-bold mb-6 text-gray-700">Technical Skills</h3>
+          {capabilityGroups.map((group, index) => (
+            <motion.div
+              key={group.title}
+              className="bg-blue-50 p-6 rounded-xl border border-blue-100 shadow-md"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.08 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-center gap-3 mb-5">
+                <span className="bg-primary text-white w-10 h-10 rounded-full inline-flex items-center justify-center shrink-0">
+                  <i className={`fas ${group.icon} text-sm`}></i>
+                </span>
+                <h3 className="text-xl font-bold text-gray-700">{group.title}</h3>
+              </div>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3">
+                {group.skills.map((skill) => (
+                  <li key={skill} className="flex items-start gap-2 text-gray-700">
+                    <i className="fas fa-check text-blue-600 text-xs mt-1.5"></i>
+                    <span>{skill}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
 
-            <div className="space-y-4">
-              {technicalSkills.map((skill, index) => (
-                <div className="skill-item" key={index}>
-                  <div className="flex justify-between mb-1">
-                    <span className="font-medium">{skill.name}</span>
-                    <span className="text-blue-600">{skill.level}</span>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-10">
+          <div>
+            <h3 className="text-xl font-bold mb-5 text-gray-700">Formal Certifications</h3>
+            {certifications.map((certification) => (
+              <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm" key={certification.name}>
+                <div className="flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-2">
+                    <i className={`fas ${certification.icon} text-blue-600`}></i>
+                    <span className="font-medium">{certification.name}</span>
                   </div>
-                  <div className="w-full bg-blue-100 rounded-full h-2.5">
-                    <motion.div 
-                      className="bg-blue-600 h-2.5 rounded-full"
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.percentage}%` }}
-                      transition={{ duration: 1, ease: "easeOut" }}
-                      viewport={{ once: true }}
-                    ></motion.div>
-                  </div>
+                  <span className="text-sm font-medium text-blue-700 bg-blue-100 px-3 py-1 rounded-full">
+                    {certification.status}
+                  </span>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
 
           <div>
-            <h3 className="text-xl font-bold mb-6 text-gray-700">Certifications, Strategy &amp; Leadership</h3>
-
-            <div className="grid grid-cols-2 gap-4">
-              {softSkills.map((skill, index) => (
-                <div className="bg-blue-50 p-4 rounded-lg border border-blue-100" key={index}>
-                  <div className="flex items-center space-x-2">
-                    <i className={`fas ${skill.icon} text-blue-600`}></i>
-                    <span className="font-medium">{skill.name}</span>
+            <h3 className="text-xl font-bold mb-5 text-gray-700">Professional Strengths</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {professionalStrengths.map((strength) => (
+                <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm" key={strength.name}>
+                  <div className="flex items-center gap-2">
+                    <i className={`fas ${strength.icon} text-blue-600`}></i>
+                    <span className="font-medium">{strength.name}</span>
                   </div>
                 </div>
               ))}

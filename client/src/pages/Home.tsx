@@ -2,6 +2,7 @@
 import Header from "@/components/Header";
 import Navigation from "@/components/Navigation";
 import About from "@/components/About";
+import Services from "@/components/Services";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
@@ -20,6 +21,7 @@ export default function Home() {
       <Header id="home" />
       <main>
         <About />
+        <Services />
         <Experience />
         <Projects />
         <Skills />

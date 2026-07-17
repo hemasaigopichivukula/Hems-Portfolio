@@ -13,13 +13,10 @@ export default function About() {
         <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
           <div className="w-full md:w-2/3">
             <p className="text-base md:text-lg leading-relaxed mb-4">
-              I'm an AI Strategy and Operations Consultant who helps organizations turn AI potential into clear priorities, practical workflows, and measurable outcomes.
+              I help organizations transform complex operational challenges into AI-enabled workflows, intelligent automation, and scalable business systems. With nearly five years of Amazon experience and an MBA focused on strategy and business analytics, I combine business understanding, structured execution, and practical AI implementation.
             </p>
             <p className="text-base md:text-lg leading-relaxed mb-4">
-              With an MBA in Business Analytics and experience at Amazon and mission-driven organizations, I connect business goals, data, and operating realities to identify high-value AI opportunities and build actionable paths from idea to implementation.
-            </p>
-            <p className="text-base md:text-lg leading-relaxed mb-4">
-              My approach blends strategic analysis with hands-on execution—redesigning processes, aligning stakeholders, and creating scalable systems that help teams adopt AI responsibly and operate more effectively.
+              My work spans AI assistants, chatbots, workflow automation, operational analytics, dashboards, process improvement, and program management. I focus on applying AI where it creates measurable value—not adding technology for its own sake.
             </p>
           </div>
           <div className="w-full md:w-1/3">

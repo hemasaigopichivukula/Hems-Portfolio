@@ -31,74 +31,121 @@ export const experienceData = [
 
 export const projectsData = [
   {
-    title: "AI Pitch Competition",
-    description: "Launched UCR's first inter-university AI Pitch Competition, scaling from 40 to 135+ attendees. Secured Perplexity.ai sponsorship and managed all aspects of event execution.",
-    link: "https://drive.google.com/file/d/1ga1eV_BzVGUT5GArJtvGkZjyREWczbdJ/view?usp=drive_link",
-    icon: "fa-brain",
-    featured: true,
-    tags: ["Event Management", "Leadership", "AI", "Marketing"]
+    title: "AI Email Assistant & Intelligent Inbox Workflow",
+    category: "Functional AI Solution",
+    description: "Built an email-connected AI assistant supporting conversational inbox retrieval, sender and date filtering, recent-message searches, and priority visibility.",
+    link: "https://drive.google.com/file/d/12F1W9LobZRcpcii4L03U8CqbzLqE2UuU/view?usp=sharing",
+    icon: "fa-robot",
+    tags: ["AI Automation", "Workflow Design", "Information Retrieval"],
+    ctaText: "View Case Study"
   },
   {
-    title: "Amazon Control Tower (ADS)",
-    description: "Led implementation of centralized dashboard integrating 13 tools, improving delivery performance across 14+ programs and reducing monitoring effort by 60%.",
-    link: "https://drive.google.com/file/d/1qsHdzX33ThHGhdTiXCOtuVOyFGbL1E78/view?usp=drive_link",
-    icon: "fa-tower-observation",
-    featured: true,
-    tags: ["SQL", "Excel Macros", "Dashboard", "Process Optimization"]
-  },
-  {
-    title: "Break Adherence Intelligence System",
-    description: "Developed real-time QuickSight dashboard for break adherence tracking across 24/7 workforce, replacing manual reports and enabling proactive monitoring.",
-    link: "https://drive.google.com/file/d/1sIKltm0RZAziEE6FSct2_tws70zXqigs/view?usp=drive_link",
-    icon: "fa-chart-line",
-    featured: false,
-    tags: ["QuickSight", "SQL", "Analytics", "Automation"]
-  },
-  {
-    title: "Dynamic Shift Schedule Automation",
-    description: "Automated weekly shift scheduling for 4,300+ employees across four sites, creating a dynamic planning engine and centralized ticketing system.",
-    link: "https://drive.google.com/file/d/1d3KXQ_BMAOIhhVET7EXCW3XfxIXkwlnA/view?usp=drive_link",
-    icon: "fa-calendar-check",
-    featured: false,
-    tags: ["Excel VBA", "SQL", "Process Automation", "Workforce Planning"]
+    title: "AI Portfolio Assistant",
+    category: "Conversational AI",
+    description: "Built an interactive portfolio chatbot that guides visitors through professional experience, skills, projects, services, and contact options.",
+    icon: "fa-comments",
+    tags: ["Conversational AI", "Chatbot Design", "User Experience"],
+    ctaText: "Try the Assistant",
+    action: "openPortfolioAssistant"
   },
   {
     title: "QSR Operations & Revenue Optimization Study",
-    description: "Independent consulting-style analysis examining peak-hour bottlenecks, drive-thru throughput constraints, customer experience gaps, staffing alignment, and potential revenue recovery opportunities in quick-service restaurant operations.",
+    category: "Strategy & Operations",
+    description: "Conducted a consulting-style analysis of peak-hour bottlenecks, drive-thru throughput, staffing alignment, customer experience, and potential revenue recovery.",
     link: "https://drive.google.com/file/d/19kE8TL2Ww0-6sqJLc77TdkTRJlPjowQI/view?usp=sharing",
     icon: "fa-store",
-    featured: false,
-    tags: ["Operations Strategy", "Revenue Analysis", "Capacity Planning", "Process Improvement"],
+    tags: ["Operations Strategy", "Revenue Analysis", "Capacity Planning"],
     ctaText: "View Case Study"
   },
   {
-    title: "AI Email Assistant & Intelligent Inbox Workflow",
-    description: "Built a functional email-connected AI assistant that supports conversational inbox retrieval, sender-based searches, date-aware filtering, recent-message queries, and priority visibility to reduce inbox navigation friction.",
-    link: "https://drive.google.com/file/d/12F1W9LobZRcpcii4L03U8CqbzLqE2UuU/view?usp=sharing",
-    icon: "fa-robot",
-    featured: false,
-    tags: ["AI Automation", "Product Thinking", "Workflow Design", "Information Retrieval"],
-    ctaText: "View Case Study"
+    title: "Amazon Control Tower",
+    category: "Analytics & Automation",
+    description: "Consolidated 13 operational tools into a centralized decision-support system that reduced analyst effort and strengthened SLA visibility.",
+    link: "https://drive.google.com/file/d/1qsHdzX33ThHGhdTiXCOtuVOyFGbL1E78/view?usp=drive_link",
+    icon: "fa-tower-observation",
+    tags: ["Decision Support", "Dashboard", "Process Automation"],
+    ctaText: "View Project"
+  },
+  {
+    title: "Break Adherence Intelligence System",
+    category: "Workforce Analytics",
+    description: "Developed an analytics and governance solution that improved adherence, strengthened operational visibility, and supported scaling across a large workforce.",
+    link: "https://drive.google.com/file/d/1sIKltm0RZAziEE6FSct2_tws70zXqigs/view?usp=drive_link",
+    icon: "fa-chart-line",
+    tags: ["Workforce Analytics", "Governance", "Operational Visibility"],
+    ctaText: "View Project"
+  },
+  {
+    title: "Dynamic Shift Schedule Automation",
+    category: "Operations Automation",
+    description: "Automated schedule and workforce-planning workflows to reduce manual effort and improve capacity alignment.",
+    link: "https://drive.google.com/file/d/1d3KXQ_BMAOIhhVET7EXCW3XfxIXkwlnA/view?usp=drive_link",
+    icon: "fa-calendar-check",
+    tags: ["Process Automation", "Workforce Planning", "Capacity Alignment"],
+    ctaText: "View Project"
   }
 ];
 
-export const technicalSkills = [
-  { name: "AI Workflow Design & Automation", level: "Advanced", percentage: 90 },
-  { name: "AI Use-Case Evaluation", level: "Advanced", percentage: 90 },
-  { name: "Operations Strategy & Process Optimization", level: "Advanced", percentage: 95 },
-  { name: "Data Analysis & Visualization", level: "Advanced", percentage: 90 },
-  { name: "Capacity & Forecast Modeling", level: "Advanced", percentage: 90 },
-  { name: "Excel (Advanced + VBA)", level: "Advanced", percentage: 95 },
-  { name: "SQL", level: "Intermediate", percentage: 80 },
-  { name: "Amazon QuickSight", level: "Intermediate", percentage: 80 },
-  { name: "Tableau", level: "Intermediate", percentage: 75 },
-  { name: "Prompt Engineering", level: "Intermediate", percentage: 75 },
-  { name: "Python", level: "Working Knowledge", percentage: 60 }
+export const capabilityGroups = [
+  {
+    title: "AI & Automation",
+    icon: "fa-robot",
+    skills: [
+      "Generative AI tools",
+      "Prompt engineering",
+      "AI workflow design",
+      "Conversational assistants",
+      "AI-assisted development",
+      "Process automation",
+      "Human-in-the-loop workflows"
+    ]
+  },
+  {
+    title: "Strategy & Operations",
+    icon: "fa-compass",
+    skills: [
+      "Program management",
+      "Business operations",
+      "Process improvement",
+      "Capacity planning",
+      "Workforce planning",
+      "KPI design",
+      "Stakeholder management"
+    ]
+  },
+  {
+    title: "Analytics & Decision Support",
+    icon: "fa-chart-line",
+    skills: [
+      "SQL",
+      "Advanced Excel and VBA",
+      "Tableau",
+      "Amazon QuickSight",
+      "Power BI",
+      "Forecasting",
+      "Dashboard development"
+    ]
+  },
+  {
+    title: "Delivery & Collaboration",
+    icon: "fa-people-group",
+    skills: [
+      "Jira",
+      "Confluence",
+      "Asana",
+      "Monday.com",
+      "Microsoft Project",
+      "Google Workspace",
+      "Agile and Scrum"
+    ]
+  }
 ];
 
-export const softSkills = [
-  { name: "PMP (In Progress)", icon: "fa-certificate" },
-  { name: "Scrum", icon: "fa-certificate" },
+export const certifications = [
+  { name: "PMP", status: "In Progress", icon: "fa-certificate" }
+];
+
+export const professionalStrengths = [
   { name: "Strategic Thinking", icon: "fa-brain" },
   { name: "Leadership", icon: "fa-users" },
   { name: "Cross-Functional Collaboration", icon: "fa-handshake" },
