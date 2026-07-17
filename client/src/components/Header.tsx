@@ -28,7 +28,7 @@ export default function Header({ id }: { id?: string }) {
         </div>
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 px-2">Hema Sai Gopi Chivukula</h1>
         <p className="text-base sm:text-lg md:text-xl text-blue-100 mt-2 max-w-2xl mx-auto px-4">
-          MBA mind behind streamlined solutions — where strategy meets simplicity
+          AI Strategy &amp; Operations Consultant turning emerging technology into practical, scalable business impact
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mt-6 px-4">
           <Button 

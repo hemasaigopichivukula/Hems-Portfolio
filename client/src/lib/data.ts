@@ -83,25 +83,26 @@ export const projectsData = [
 ];
 
 export const technicalSkills = [
-  { name: "Excel (Advanced + VBA)", level: "Advanced", percentage: 95 },
-  { name: "Monday.com", level: "Advanced", percentage: 95 },
-  { name: "Microsoft Office Suite", level: "Advanced", percentage: 95 },
-  { name: "Google Workspace", level: "Advanced", percentage: 90 },
+  { name: "AI Workflow Design & Automation", level: "Advanced", percentage: 90 },
+  { name: "AI Use-Case Evaluation", level: "Advanced", percentage: 90 },
+  { name: "Operations Strategy & Process Optimization", level: "Advanced", percentage: 95 },
+  { name: "Data Analysis & Visualization", level: "Advanced", percentage: 90 },
   { name: "Capacity & Forecast Modeling", level: "Advanced", percentage: 90 },
+  { name: "Excel (Advanced + VBA)", level: "Advanced", percentage: 95 },
   { name: "SQL", level: "Intermediate", percentage: 80 },
   { name: "Amazon QuickSight", level: "Intermediate", percentage: 80 },
-  { name: "Asana", level: "Intermediate", percentage: 80 },
   { name: "Tableau", level: "Intermediate", percentage: 75 },
-  { name: "Python", level: "Basic", percentage: 60 }
+  { name: "Prompt Engineering", level: "Intermediate", percentage: 75 },
+  { name: "Python", level: "Working Knowledge", percentage: 60 }
 ];
 
 export const softSkills = [
   { name: "PMP (In Progress)", icon: "fa-certificate" },
   { name: "Scrum", icon: "fa-certificate" },
-  { name: "Teaching Assistant (UCR)", icon: "fa-graduation-cap" },
   { name: "Strategic Thinking", icon: "fa-brain" },
   { name: "Leadership", icon: "fa-users" },
   { name: "Cross-Functional Collaboration", icon: "fa-handshake" },
   { name: "Data-Driven Decision Making", icon: "fa-chart-line" },
-  { name: "Process Improvement", icon: "fa-arrow-trend-up" }
+  { name: "Stakeholder Alignment", icon: "fa-people-group" },
+  { name: "Change Management", icon: "fa-arrows-rotate" }
 ];

@@ -13,13 +13,13 @@ export default function About() {
         <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
           <div className="w-full md:w-2/3">
             <p className="text-base md:text-lg leading-relaxed mb-4">
-              I'm a strategic problem-solver focused on engineering clarity from complexity.
+              I'm an AI Strategy and Operations Consultant who helps organizations turn AI potential into clear priorities, practical workflows, and measurable outcomes.
             </p>
             <p className="text-base md:text-lg leading-relaxed mb-4">
-              With an MBA and experience at Amazon and mission-driven organizations, I transform operational challenges into structured, actionable systems through deep analysis and innovative solutions.
+              With an MBA in Business Analytics and experience at Amazon and mission-driven organizations, I connect business goals, data, and operating realities to identify high-value AI opportunities and build actionable paths from idea to implementation.
             </p>
             <p className="text-base md:text-lg leading-relaxed mb-4">
-              My approach combines analytical thinking with practical execution—turning complex problems into clear, measurable results that drive organizational success.
+              My approach blends strategic analysis with hands-on execution—redesigning processes, aligning stakeholders, and creating scalable systems that help teams adopt AI responsibly and operate more effectively.
             </p>
           </div>
           <div className="w-full md:w-1/3">
