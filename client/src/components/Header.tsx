@@ -55,7 +55,7 @@ export default function Header({ id }: { id?: string }) {
             variant="link"
             className="h-auto p-0 text-blue-100 hover:text-white"
           >
-            <a href="https://drive.google.com/file/d/1Ch-x-fOSuvfiHK1uw_x76ukYcdi5Ptgo/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
+            <a href="https://drive.google.com/file/d/1I1_H6QLAQabi5o5ThsP4DJxOLULIMpmO/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Professioanl Profile</a>
           </Button>
           <Button 
             asChild

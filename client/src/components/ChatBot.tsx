@@ -36,7 +36,7 @@ const modePrompts: Record<VisitorMode, string[]> = {
 
 const recruiterActions: MessageAction[] = [
   { label: "View Experience", section: "experience", icon: "fa-briefcase" },
-  { label: "View Resume", href: "https://drive.google.com/file/d/1Ch-x-fOSuvfiHK1uw_x76ukYcdi5Ptgo/view?usp=sharing", icon: "fa-file-lines" },
+  { label: "View Professioanl Profile", href: "https://drive.google.com/file/d/1I1_H6QLAQabi5o5ThsP4DJxOLULIMpmO/view?usp=drive_link", icon: "fa-file-lines" },
 ];
 
 const businessActions: MessageAction[] = [
